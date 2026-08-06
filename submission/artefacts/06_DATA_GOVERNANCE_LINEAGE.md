@@ -12,17 +12,24 @@ Data inventory, quality, contracts, provenance, authority, retention and residen
 - Owners, approvals, review triggers and measurable acceptance gates are named.
 - The artefact contains no unsupported coverage, pricing, reserve, payment or treaty conclusion.
 
+## Artefact-specific acceptance criteria
+
+- No workflow proceeds on a cached authorization status alone; a live re-check against the current entitlement source is performed or the action is denied (CTRL-DGL-01).
+- No combined cross-currency total is produced without a cited FX methodology and valuation date; per-currency figures are shown by default (CTRL-DGL-02).
+- Any model-backed component refuses to use a deployed artefact that mismatches the approved registry and raises an escalation instead (CTRL-DGL-03).
+- Accumulation/duplicate-detection outputs are labelled "provisional — address resolution incomplete" whenever unresolved address/geocode variants are present (CTRL-DGL-04).
+
 ## Scope and evidence register
 
 | Evidence ID | Source path and locator | Authority/status | Effective time | Jurisdiction | Use and limitation |
 |---|---|---|---|---|---|
-| — | case/SOURCE_SYSTEM_FACT_PACK.md | approved/case-pack | 2026-08-01 | MULTI | Twelve source systems with known issues and authority caveats; primary source for the lineage/authority table below. |
-| — | metadata/DATASET_CATALOG.csv | as_supplied/verified (hash-checked by tools/verify_package.py) | n/a | n/a | Row/column counts and SHA-256 per dataset; used to confirm dataset integrity before use. |
-| — | metadata/RELATIONSHIP_RULES.csv | as_supplied/verified | n/a | n/a | Declared foreign-key relationships (e.g., REL-007 access_cache.csv→users_entitlements.csv; REL-008 model_artifacts.csv→model_registry.csv). |
+| EVID-041 | case/SOURCE_SYSTEM_FACT_PACK.md | approved/case-pack | 2026-08-01 | MULTI | Twelve source systems with known issues and authority caveats; primary source for the lineage/authority table below. |
+| EVID-042 | metadata/DATASET_CATALOG.csv | as_supplied/verified (hash-checked by tools/verify_package.py) | n/a | n/a | Row/column counts and SHA-256 per dataset; used to confirm dataset integrity before use. |
+| EVID-038 | metadata/RELATIONSHIP_RULES.csv | as_supplied/verified | n/a | n/a | Declared foreign-key relationships (e.g., REL-007 access_cache.csv→users_entitlements.csv; REL-008 model_artifacts.csv→model_registry.csv). |
 | EVID-007 | data/system_inventory.csv (record_id=INJ-004-SYSTEM_INVENTORY) | mixed/as_supplied | 2026-08-01T06:00:00Z | MULTI | Acquisition integration creates identifier/tenancy fragmentation (INJ-004). |
 | EVID-017 | data/billing_events.csv (record_id=INJ-010-BILLING_EVENTS) | mixed/as_supplied | 2026-08-01T06:00:00Z | MULTI | Cancellation/reinstatement/premium-receipt event-ordering conflict (INJ-010). |
-| — | data/addresses.csv; data/geocodes.csv | mixed/as_supplied | n/a | MULTI | INJ-030: one apartment complex has six address forms and two geocodes, fragmenting accumulation/duplicate detection. |
-| — | starter/baseline_diagnostics.py (executed output) | participant-generated diagnostic | 2026-08-06 | n/a | Confirms via direct execution: mixed currencies in claims.csv; access_cache.csv can show `active` after a user is `revoked` in users_entitlements.csv; model_artifacts.csv has a `mismatch` status against model_registry.csv. |
+| EVID-043;EVID-044 | data/addresses.csv; data/geocodes.csv | mixed/as_supplied | n/a | MULTI | INJ-030: one apartment complex has six address forms and two geocodes, fragmenting accumulation/duplicate detection. |
+| EVID-045 | starter/baseline_diagnostics.py (executed output) | participant-generated diagnostic | 2026-08-06 | n/a | Confirms via direct execution: mixed currencies in claims.csv; access_cache.csv can show `active` after a user is `revoked` in users_entitlements.csv; model_artifacts.csv has a `mismatch` status against model_registry.csv. |
 
 ## Working assumptions and constraints
 

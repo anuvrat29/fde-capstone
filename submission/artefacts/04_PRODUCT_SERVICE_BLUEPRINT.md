@@ -12,11 +12,17 @@ Personas, jobs, service blueprint, prohibited actions, human review and contesta
 - Owners, approvals, review triggers and measurable acceptance gates are named.
 - The artefact contains no unsupported coverage, pricing, reserve, payment or treaty conclusion.
 
+## Artefact-specific acceptance criteria
+
+- Each of the three workflows names exactly one primary human-approver persona whose action converts an AI-prepared finding into an operational step (A-01).
+- Each workflow's prohibited-action list (CTRL-PSB-01/02/03) is enforced as a structural output-schema constraint, not only as documentation.
+- A prompt-injection test using knowledge/MALICIOUS_ADJUSTER_REPORT.md demonstrates that embedded instructions in evidence are never followed as system authority (CTRL-PSB-04).
+
 ## Scope and evidence register
 
 | Evidence ID | Source path and locator | Authority/status | Effective time | Jurisdiction | Use and limitation |
 |---|---|---|---|---|---|
-| — | case/INTEGRATED_CASE.md Section 4 (Mandatory workflows) | approved/case-pack | 2026-08-01 | MULTI | Defines Workflow A/B/C scope and explicit prohibited actions per workflow. |
+| EVID-036 | case/INTEGRATED_CASE.md Section 4 (Mandatory workflows) | approved/case-pack | 2026-08-01 | MULTI | Defines Workflow A/B/C scope and explicit prohibited actions per workflow. |
 | EVID-008 | data/ai_use_boundaries.csv (record_id=INJ-005-AI_USE_BOUNDARIES) | mixed/as_supplied | 2026-08-01T06:00:00Z | MULTI | Board-level prohibited-action list (INJ-005). |
 | EVID-025 | knowledge/UNDERWRITING_HUMAN_AUTHORITY.md | approved/trusted_with_conditions | 2026-01-01 | global | AI prepares evidence/options only; humans bind/decline/price/alter terms. |
 | EVID-024 | knowledge/POLICY_WORDING_AUTHORITY.md | approved/trusted_with_conditions | 2026-01-01 | global | Signed schedule/endorsement over marketing summary; applies to Workflow A/B outputs referencing wording. |

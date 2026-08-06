@@ -12,6 +12,12 @@ Bounded contexts, aggregates, events, anti-corruption layers and ubiquitous lang
 - Owners, approvals, review triggers and measurable acceptance gates are named.
 - The artefact contains no unsupported coverage, pricing, reserve, payment or treaty conclusion.
 
+## Artefact-specific acceptance criteria
+
+- Wording-version resolution never defaults to a marketing_summary authority row (CTRL-DDD-01).
+- Endorsement temporal facts (requested_at, issued_at, effective_at, premium_received_at) remain independently queryable in any downstream representation, never collapsed to one date (CTRL-DDD-02).
+- Claims sharing a loss_event_id are presented as a flagged reconciliation fact for human review, never auto-merged or auto-labelled as fraud (CTRL-DDD-03).
+
 ## Scope and evidence register
 
 | Evidence ID | Source path and locator | Authority/status | Effective time | Jurisdiction | Use and limitation |

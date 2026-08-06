@@ -12,6 +12,12 @@ Define, Measure, Analyse, Improve and Control evidence with baselines and contro
 - Owners, approvals, review triggers and measurable acceptance gates are named.
 - The artefact contains no unsupported coverage, pricing, reserve, payment or treaty conclusion.
 
+## Artefact-specific acceptance criteria
+
+- No improvement percentage against the 20% cycle-time / 12% expense-ratio target is published without a logged baseline measurement date and method (CTRL-DMAIC-01).
+- The endorsement-timing defect (END-771 pattern) is surfaced only as a flagged conflict; no implementation auto-approves or backdates an endorsement (CTRL-DMAIC-02).
+- A dated, documented no-AI comparator result exists before Business Case sign-off proceeds (CTRL-DMAIC-03).
+
 ## Scope and evidence register
 
 | Evidence ID | Source path and locator | Authority/status | Effective time | Jurisdiction | Use and limitation |

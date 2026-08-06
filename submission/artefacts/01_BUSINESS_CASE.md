@@ -12,6 +12,13 @@ Business case, measurable baseline, KPI tree, no-AI alternative, value leakage a
 - Owners, approvals, review triggers and measurable acceptance gates are named.
 - The artefact contains no unsupported coverage, pricing, reserve, payment or treaty conclusion.
 
+## Artefact-specific acceptance criteria
+
+- No cycle-time or expense-ratio figure is reported as achieved without a linked, dated baseline measurement (CTRL-BC-01).
+- The no-AI alternative (INJ-002) is quantified and compared line-by-line before any AI-assisted option is recommended (CTRL-BC-02).
+- Every published benefit or cost figure includes complaints, appeals, human-review, litigation, regulatory-remediation and model-change cost lines (CTRL-BC-03).
+- Benefit and risk figures are broken out by legal entity before any blended total is presented (CTRL-BC-04).
+
 ## Scope and evidence register
 
 | Evidence ID | Source path and locator | Authority/status | Effective time | Jurisdiction | Use and limitation |

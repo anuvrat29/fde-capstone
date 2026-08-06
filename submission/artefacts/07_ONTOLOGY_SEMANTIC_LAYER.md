@@ -12,6 +12,12 @@ Ontology, semantic definitions, temporal policy logic and ownership for the core
 - Owners, approvals, review triggers and measurable acceptance gates are named.
 - The artefact contains no unsupported coverage, pricing, reserve, payment or treaty conclusion.
 
+## Artefact-specific acceptance criteria
+
+- Wording-authority queries never resolve using a marketing_summary row (CTRL-OSL-01).
+- Loss Event disputed-window status is preserved in output, never silently resolved to a single timestamp (CTRL-OSL-03).
+- Parametric Trigger resolution cites only the signed index/station definition; any brochure text shown is explicitly labelled non-authoritative (CTRL-OSL-04).
+
 ## Scope and evidence register
 
 | Evidence ID | Source path and locator | Authority/status | Effective time | Jurisdiction | Use and limitation |
@@ -19,9 +25,9 @@ Ontology, semantic definitions, temporal policy logic and ownership for the core
 | EVID-012 | data/policy_wording_versions.csv | domain_specific/signed_schedule_and_approved_wording | 2026-04-01 | IN | Defines Wording Version concept with explicit authority column (signed_schedule, approved_wording, marketing_summary). |
 | EVID-024 | knowledge/POLICY_WORDING_AUTHORITY.md | approved/trusted_with_conditions | 2026-01-01 | global | Establishes the authority-ranking rule: signed schedule/endorsement over marketing summary. |
 | EVID-020 | data/parametric_contracts.csv (record_id=INJ-012-PARAMETRIC_CONTRACTS) | mixed/as_supplied | 2026-08-01T06:00:00Z | MULTI | Parametric Trigger concept: brochure describes rainfall at farm location; contract uses named weather-station index (INJ-012). |
-| — | knowledge/PARAMETRIC_TRIGGER_AUTHORITY.md | approved/trusted_with_conditions | 2026-01-01 | global | Establishes that signed index/station/observation-period/fallback methodology controls, not marketing description. |
+| EVID-039 | knowledge/PARAMETRIC_TRIGGER_AUTHORITY.md | approved/trusted_with_conditions | 2026-01-01 | global | Establishes that signed index/station/observation-period/fallback methodology controls, not marketing description. |
 | EVID-028 | data/loss_events.csv (loss_event_id=LOSS-NILA-01) | domain_specific/claims_and_reserves | 2026-07-28 | Asia/Kolkata | Defines Loss Event temporal facts: occurred_start/occurred_end (local), reported_timezone, normalized_start_utc/end_utc, disputed_window status (INJ-022). |
-| — | data/timezone_rules.csv | mixed/as_supplied | n/a | MULTI | Referenced for jurisdictional/DST normalization rules (INJ-022). |
+| EVID-040 | data/timezone_rules.csv | mixed/as_supplied | n/a | MULTI | Referenced for jurisdictional/DST normalization rules (INJ-022). |
 | EVID-027 | data/claims.csv (claim_id=CLM-10001;CLM-10002) | domain_specific/claims_and_reserves | 2026-07-29 | IN | Claim concept referencing policy_id, party_id, loss_event_id, cat_event_id — demonstrates one Loss Event linking to multiple Claims (INJ-021). |
 
 ## Working assumptions and constraints

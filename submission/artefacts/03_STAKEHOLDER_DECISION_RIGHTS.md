@@ -12,11 +12,17 @@ Stakeholders, incentives, objections, RACI, delegated authorities and escalation
 - Owners, approvals, review triggers and measurable acceptance gates are named.
 - The artefact contains no unsupported coverage, pricing, reserve, payment or treaty conclusion.
 
+## Artefact-specific acceptance criteria
+
+- No workflow output schema or code path represents a binding, pricing, reserve, settlement, payment, cancellation or treaty decision (CTRL-SDR-01).
+- Authority-exceedance patterns matching INJ-009 or INJ-020 are flagged to a named human approver, never silently resolved or auto-reversed (CTRL-SDR-02).
+- The static RACI in this artefact is never treated as a runtime authority source; per-jurisdiction, per-product authority is checked at time of use (A-02).
+
 ## Scope and evidence register
 
 | Evidence ID | Source path and locator | Authority/status | Effective time | Jurisdiction | Use and limitation |
 |---|---|---|---|---|---|
-| — | case/STAKEHOLDER_PACK.md | approved/case-pack | 2026-08-01 | MULTI | Twelve named stakeholders with objective, tension and decision authority; primary source for the RACI below. |
+| EVID-046 | case/STAKEHOLDER_PACK.md | approved/case-pack | 2026-08-01 | MULTI | Twelve named stakeholders with objective, tension and decision authority; primary source for the RACI below. |
 | EVID-005 | data/legal_entities.csv (record_id=INJ-003-LEGAL_ENTITIES) | mixed/as_supplied | 2026-08-01T06:00:00Z | MULTI | Mutual-parent vs listed-subsidiary tension (INJ-003) and acquisition integration (INJ-004) evidence. |
 | EVID-006 | data/strategy_conflicts.csv (record_id=INJ-003-STRATEGY_CONFLICTS) | mixed/as_supplied | 2026-08-01T06:00:00Z | MULTI | Corroborates INJ-003. |
 | EVID-007 | data/system_inventory.csv (record_id=INJ-004-SYSTEM_INVENTORY) | mixed/as_supplied | 2026-08-01T06:00:00Z | MULTI | Acquisition integration identifier/tenancy fragmentation (INJ-004). |
