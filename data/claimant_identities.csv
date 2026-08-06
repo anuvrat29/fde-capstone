@@ -1,0 +1,8 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+CLAIMANT_IDE-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic claimant_identities evidence row 1; deliberately mixed authority.
+CLAIMANT_IDE-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic claimant_identities evidence row 2; deliberately mixed authority.
+CLAIMANT_IDE-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic claimant_identities evidence row 3; deliberately mixed authority.
+CLAIMANT_IDE-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic claimant_identities evidence row 4; deliberately mixed authority.
+INJ-021-CLAIMANT_IDENTITIES,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,Duplicate catastrophe claims,CASE-PACK,MULTI,"The same property loss appears under household, landlord and small-business policies with different addresses. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."
+INJ-045-CLAIMANT_IDENTITIES,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,Fraud-ring graph ambiguity,CASE-PACK,MULTI,"Shared devices, addresses and repairers suggest a ring, but some links are legitimate household or fleet relationships. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."
+INJ-047-CLAIMANT_IDENTITIES,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,Sanctions-name collision,CASE-PACK,MULTI,A claimant name matches a sanctions record but date of birth and nationality are incomplete. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions.

@@ -1,0 +1,17 @@
+{
+  "treaty_id": "TR-2026-CAT-01",
+  "rows": [
+    {
+      "claim": "CLM-10001",
+      "amount": 1850000,
+      "currency": "INR",
+      "valuation_date": "2026-07-31"
+    },
+    {
+      "claim": "CLM-20042",
+      "amount": 48000,
+      "currency": "EUR",
+      "valuation_date": "2026-08-01"
+    }
+  ]
+}

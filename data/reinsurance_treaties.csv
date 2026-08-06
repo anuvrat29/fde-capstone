@@ -1,0 +1,3 @@
+treaty_id,cedent,reinsurer,perils,attachment,limit,currency,hours_clause,wording_status
+TR-2026-CAT-01,AMR India General,NorthStar Re,windstorm;flood,500000000,2500000000,INR,72 wind;168 flood,signed
+TR-2026-CY-02,AMR US Specialty,Atlas Re,cyber,10000000,50000000,USD,single originating cause,slip_signed_wording_pending

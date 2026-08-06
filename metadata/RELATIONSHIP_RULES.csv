@@ -1,0 +1,13 @@
+relationship_id,child_dataset,child_column,parent_dataset,parent_column,required,allow_unmatched,rationale
+REL-001,claims.csv,policy_id,policies.csv,policy_id,yes,no,Every supplied claim must reference a supplied policy.
+REL-002,claims.csv,party_id,parties.csv,party_id,yes,no,Claim party identity must resolve.
+REL-003,claims.csv,cat_event_id,cat_events.csv,event_id,no,no,Non-catastrophe claims may have a blank event.
+REL-004,policies.csv,party_id,parties.csv,party_id,yes,no,Policyholder/insured party must resolve.
+REL-005,endorsements.csv,policy_id,policies.csv,policy_id,yes,no,Endorsement must resolve to policy.
+REL-006,party_roles.csv,party_id,parties.csv,party_id,yes,no,Party role must resolve to a supplied party.
+REL-007,access_cache.csv,user_id,users_entitlements.csv,user_id,yes,no,Cached access must resolve to current entitlement.
+REL-008,model_artifacts.csv,model_id,model_registry.csv,model_id,yes,no,Deployed artefacts must be registry-controlled.
+REL-009,model_performance.csv,model_id,model_registry.csv,model_id,no,yes,OM-Small is an external fallback candidate and is intentionally absent from the internal registry.
+REL-010,fairness_metrics.csv,model_id,model_registry.csv,model_id,no,yes,UW-LIFE-4 is a legacy externally governed model and its missing registry entry is an explicit control gap.
+REL-011,policies.csv,wording_version,policy_wording_versions.csv,wording_version,no,yes,Only the Home Protect wording family is fully supplied; other wording records are deliberate evidence gaps.
+REL-012,claims.csv,loss_event_id,loss_events.csv,loss_event_id,yes,no,Every supplied claim must resolve to a supplied loss event.

@@ -1,0 +1,4 @@
+event_id,system,start,end,mode,cause
+DOWN-01,PolicyCore-IN,2026-07-29T01:10:00Z,,read_only,ransomware_containment
+DOWN-02,ClaimsImages,2026-07-29T01:20:00Z,2026-07-31T18:00:00Z,offline,segmentation
+DOWN-03,AI-Primary-EU,2026-08-01T00:20:00Z,,unavailable,regional_outage

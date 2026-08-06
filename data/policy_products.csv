@@ -1,0 +1,7 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+POLICY_PRODU-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic policy_products evidence row 1; deliberately mixed authority.
+POLICY_PRODU-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic policy_products evidence row 2; deliberately mixed authority.
+POLICY_PRODU-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic policy_products evidence row 3; deliberately mixed authority.
+POLICY_PRODU-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic policy_products evidence row 4; deliberately mixed authority.
+INJ-007-POLICY_PRODUCTS,PTY-001,2026-08-01T06:00:00Z,challenge_fact,Policy version collision,CASE-PACK,MULTI,"Three policy wordings with the same marketing name have different exclusions, endorsements and territorial limits. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."
+INJ-056-POLICY_PRODUCTS,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,IFRS 17 grouping conflict,CASE-PACK,MULTI,"Acquired portfolios map inconsistently to cohorts, profitability groups and contract boundaries. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."

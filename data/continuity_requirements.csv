@@ -1,0 +1,4 @@
+capability,max_ai_outage_days,manual_mode,minimum_staff,rto_hours
+catastrophe_claim_intake,21,paper_or_csv_intake,45,4
+statutory_reporting,21,controlled_report_pack,12,8
+reinsurance_notice,21,treaty_register_and_email,8,12

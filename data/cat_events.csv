@@ -1,0 +1,3 @@
+event_id,name,start_utc,end_utc,definition_owner,hours_clause
+CAT-NILA-A,Cyclone Nila Wind and Surge,2026-07-28T15:00:00Z,2026-07-31T15:00:00Z,Claims,72
+CAT-NILA-B,Nila River Flood,2026-07-29T00:00:00Z,2026-08-05T00:00:00Z,Reinsurance,168

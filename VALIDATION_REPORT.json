@@ -1,0 +1,140 @@
+{
+  "package": "Project AEGIS-INSURE Workshop Ready v2",
+  "generated_at": "deterministic-preflight",
+  "summary": {
+    "injects": 96,
+    "data_csv": 203,
+    "knowledge_documents": 37,
+    "templates": 32,
+    "public_fixtures": 18,
+    "checks": 25,
+    "failures": 0
+  },
+  "checks": [
+    {
+      "check": "required files",
+      "status": "PASS",
+      "detail": "missing: "
+    },
+    {
+      "check": "CSV parse and width",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no exact duplicate rows",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "declared unique keys",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "JSON parse",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "96 sequential unique injects",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "case contains every inject",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "18 sequential public scenarios",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "inject evidence paths resolve",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "inject evidence ledger coverage",
+      "status": "PASS",
+      "detail": "rows=191"
+    },
+    {
+      "check": "inject evidence locators",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "one test obligation per inject",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "knowledge catalog complete",
+      "status": "PASS",
+      "detail": "missing=[] stale=[]"
+    },
+    {
+      "check": "knowledge document hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "dataset profiles exact",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "declared relationships",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "rubric totals 200",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "32 structured templates",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "internal file references",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "source verification register",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "public fixtures",
+      "status": "PASS",
+      "detail": "Public fixtures: 18\nFixture validation: PASS"
+    },
+    {
+      "check": "contract tests",
+      "status": "PASS",
+      "detail": "Contract tests: PASS"
+    },
+    {
+      "check": "immutable file hashes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "explorer avoids HTML interpolation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "check": "no runtime caches",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

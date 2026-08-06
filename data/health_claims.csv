@@ -1,0 +1,8 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+HEALTH_CLAIM-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic health_claims evidence row 1; deliberately mixed authority.
+HEALTH_CLAIM-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic health_claims evidence row 2; deliberately mixed authority.
+HEALTH_CLAIM-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic health_claims evidence row 3; deliberately mixed authority.
+HEALTH_CLAIM-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic health_claims evidence row 4; deliberately mixed authority.
+INJ-024-HEALTH_CLAIMS,CAT-NILA-A,2026-08-01T06:00:00Z,challenge_fact,Medical necessity conflict,CASE-PACK,MULTI,"Health pre-authorisation, provider invoice and clinical note disagree on procedure code and medical necessity. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."
+INJ-038-HEALTH_CLAIMS,PTY-001,2026-08-01T06:00:00Z,challenge_fact,Health-code version mismatch,CASE-PACK,MULTI,"ICD, CPT and local procedure codes use different effective versions across claim, pre-auth and policy rules. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."
+INJ-042-HEALTH_CLAIMS,PTY-001,2026-08-01T06:00:00Z,challenge_fact,Dependent eligibility mismatch,CASE-PACK,MULTI,A newborn is covered under a grace rule in one system but absent from the membership file. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions.

@@ -1,0 +1,5 @@
+party_id,role,context_id
+PTY-001,policyholder,POL-IN-HO-1001
+PTY-001,insured,POL-IN-HO-1001
+PTY-001,director,ORG-SME-001
+PTY-001-DUP,claimant,CLM-10002

@@ -1,0 +1,5 @@
+party_id,name,dob,country,sensitivity
+PTY-001,Ananya Rao,1987-06-14,IN,personal
+PTY-042,Lukas Weber,1991-02-03,DE,personal
+ORG-778,Helix Components LLC,,US,commercial
+PTY-001-DUP,A. Rao,1987-06-14,IN,personal

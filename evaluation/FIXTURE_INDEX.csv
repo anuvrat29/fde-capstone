@@ -1,0 +1,19 @@
+scenario_id,title,workflow,fixture_path,contract_path,related_injects,evidence_items
+EV-01,Flood endorsement timing,coverage_claim_reconciliation,evaluation/fixtures/EV-01/fixture.json,evaluation/contracts/coverage_claim_reconciliation_response.schema.json,INJ-008,5
+EV-02,Duplicate multi-policy catastrophe claim,coverage_claim_reconciliation,evaluation/fixtures/EV-02/fixture.json,evaluation/contracts/coverage_claim_reconciliation_response.schema.json,INJ-019;INJ-031,4
+EV-03,Malicious adjuster report,coverage_claim_reconciliation,evaluation/fixtures/EV-03/fixture.json,evaluation/contracts/coverage_claim_reconciliation_response.schema.json,INJ-077,2
+EV-04,Revoked adjuster cache,coverage_claim_reconciliation,evaluation/fixtures/EV-04/fixture.json,evaluation/contracts/coverage_claim_reconciliation_response.schema.json,INJ-076,2
+EV-05,Mixed policy wording,coverage_claim_reconciliation,evaluation/fixtures/EV-05/fixture.json,evaluation/contracts/coverage_claim_reconciliation_response.schema.json,INJ-007,3
+EV-06,Protected-proxy pricing,underwriting_pricing_support,evaluation/fixtures/EV-06/fixture.json,evaluation/contracts/underwriting_pricing_support_response.schema.json,INJ-013;INJ-065,3
+EV-07,Telematics firmware drift,underwriting_pricing_support,evaluation/fixtures/EV-07/fixture.json,evaluation/contracts/underwriting_pricing_support_response.schema.json,INJ-015,3
+EV-08,Health-note minimum necessary,coverage_claim_reconciliation,evaluation/fixtures/EV-08/fixture.json,evaluation/contracts/coverage_claim_reconciliation_response.schema.json,INJ-027;INJ-068,3
+EV-09,Life contestability boundary,underwriting_pricing_support,evaluation/fixtures/EV-09/fixture.json,evaluation/contracts/underwriting_pricing_support_response.schema.json,INJ-028,4
+EV-10,Parametric sensor conflict,catastrophe_reinsurance_planning,evaluation/fixtures/EV-10/fixture.json,evaluation/contracts/catastrophe_reinsurance_planning_response.schema.json,INJ-012;INJ-036,3
+EV-11,Treaty hours-clause conflict,catastrophe_reinsurance_planning,evaluation/fixtures/EV-11/fixture.json,evaluation/contracts/catastrophe_reinsurance_planning_response.schema.json,INJ-039;INJ-040,4
+EV-12,Mixed-currency bordereaux,catastrophe_reinsurance_planning,evaluation/fixtures/EV-12/fixture.json,evaluation/contracts/catastrophe_reinsurance_planning_response.schema.json,INJ-042,3
+EV-13,Checkpoint replay,catastrophe_reinsurance_planning,evaluation/fixtures/EV-13/fixture.json,evaluation/contracts/catastrophe_reinsurance_planning_response.schema.json,INJ-094,3
+EV-14,Fallback multilingual regression,coverage_claim_reconciliation,evaluation/fixtures/EV-14/fixture.json,evaluation/contracts/coverage_claim_reconciliation_response.schema.json,INJ-066;INJ-095,3
+EV-15,Vendor price shock,underwriting_pricing_support,evaluation/fixtures/EV-15/fixture.json,evaluation/contracts/underwriting_pricing_support_response.schema.json,INJ-089,3
+EV-16,Ransomware degraded mode,catastrophe_reinsurance_planning,evaluation/fixtures/EV-16/fixture.json,evaluation/contracts/catastrophe_reinsurance_planning_response.schema.json,INJ-091;INJ-093;INJ-096,4
+EV-17,Cross-tenant broker query,coverage_claim_reconciliation,evaluation/fixtures/EV-17/fixture.json,evaluation/contracts/coverage_claim_reconciliation_response.schema.json,INJ-075;INJ-080,3
+EV-18,Customer appeal,coverage_claim_reconciliation,evaluation/fixtures/EV-18/fixture.json,evaluation/contracts/coverage_claim_reconciliation_response.schema.json,INJ-033;INJ-069,4

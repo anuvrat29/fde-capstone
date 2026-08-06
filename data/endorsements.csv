@@ -1,0 +1,3 @@
+endorsement_id,policy_id,type,requested_at,issued_at,effective_at,premium_received_at,status
+END-771,POL-IN-HO-1001,flood_extension,2026-07-27T17:55:00+05:30,2026-07-29T10:11:00+05:30,2026-07-28T00:00:00+05:30,2026-07-28T22:40:00+05:30,issued
+END-772,POL-US-CY-9008,dependent_business_interruption,2026-06-01T09:00:00-06:00,2026-06-01T10:00:00-06:00,2026-06-01T00:00:00-06:00,2026-06-03T12:00:00-06:00,issued

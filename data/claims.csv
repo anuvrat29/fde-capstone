@@ -1,0 +1,5 @@
+claim_id,policy_id,party_id,loss_event_id,reported_at,loss_type,status,claimed_amount,currency,cat_event_id
+CLM-10001,POL-IN-HO-1001,PTY-001,LOSS-NILA-01,2026-07-29T08:12:00+05:30,flood,open,1850000,INR,CAT-NILA-A
+CLM-10002,POL-IN-SME-1001,PTY-001,LOSS-NILA-01,2026-07-29T09:03:00+05:30,business_interruption,open,7200000,INR,CAT-NILA-B
+CLM-20042,POL-DE-MO-0042,PTY-042,LOSS-EV-42,2026-07-30T15:20:00+02:00,collision_fire,open,48000,EUR,
+CLM-90008,POL-US-CY-9008,ORG-778,LOSS-RANSOM-778,2026-07-28T11:00:00-06:00,cyber_interruption,coverage_review,5400000,USD,

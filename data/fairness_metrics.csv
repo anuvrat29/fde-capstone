@@ -1,0 +1,4 @@
+model_id,subgroup,selection_rate,false_positive_rate,reference_rate,threshold,status
+PRC-MOTOR-9,postal_proxy_low_income,0.61,0.23,0.82,0.80,breach
+FRD-CLAIM-6,Hindi_language,0.19,0.31,0.14,0.80,breach
+UW-LIFE-4,female_45_60,0.78,0.11,0.80,0.80,review

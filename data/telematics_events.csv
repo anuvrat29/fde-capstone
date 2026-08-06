@@ -1,0 +1,7 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+TELEMATICS_E-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic telematics_events evidence row 1; deliberately mixed authority.
+TELEMATICS_E-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic telematics_events evidence row 2; deliberately mixed authority.
+TELEMATICS_E-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic telematics_events evidence row 3; deliberately mixed authority.
+TELEMATICS_E-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic telematics_events evidence row 4; deliberately mixed authority.
+INJ-014-TELEMATICS_EVENTS,CLM-10001,2026-08-01T06:00:00Z,challenge_fact,Telematics firmware drift,CASE-PACK,MULTI,A firmware update changes harsh-braking counts and mileage aggregation without a pricing-model recalibration. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions.
+INJ-074-TELEMATICS_EVENTS,CAT-NILA-A,2026-08-01T06:00:00Z,challenge_fact,Telematics family surveillance,CASE-PACK,MULTI,A policyholder receives scores inferred from journeys made by other household drivers. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions.

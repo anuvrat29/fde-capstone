@@ -1,0 +1,5 @@
+---
+description: Insurance safety boundaries
+alwaysApply: true
+---
+Never implement autonomous binding, declinature, pricing, reserve, settlement, payment, cancellation, repudiation or treaty placement. Preserve provenance, conflicts, authorization and human approval.

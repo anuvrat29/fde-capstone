@@ -1,0 +1,16 @@
+dimension_id,dimension,points,mandatory_gate_related
+DIM-01,"Discovery, business value, DMAIC and no-AI challenge",16,no
+DIM-02,"Product proposition, service blueprint and decision rights",12,no
+DIM-03,"DDD, requirements and brownfield modernization",16,no
+DIM-04,"Data governance, authority, ontology and semantic layer",16,no
+DIM-05,Knowledge-graph decision and integration contracts,10,no
+DIM-06,"Architecture, ADRs and engineering reproducibility",16,no
+DIM-07,Three workflow implementations,30,yes
+DIM-08,"Insurance, actuarial and regulated-control boundaries",14,yes
+DIM-09,"Security, Zero Trust and agentic security",14,yes
+DIM-10,"Privacy, responsible AI, fairness and accessibility",14,yes
+DIM-11,Regulatory and ISO/IEC 42001-aligned governance,10,yes
+DIM-12,"Evaluation, TEVV and assurance case",14,yes
+DIM-13,"Token efficiency, economics and AI FinOps",8,yes
+DIM-14,"Reliability, incident response, exit and retirement",8,yes
+DIM-15,"Change, handover, executive defence and elevator pitch",2,yes

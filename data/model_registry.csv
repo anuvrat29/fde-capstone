@@ -1,0 +1,4 @@
+model_id,purpose,version,approved_hash,approval_status,risk_tier
+PRC-MOTOR-9,motor pricing support,9.3.1,a91c-approved,approved,high
+FRD-CLAIM-6,claim fraud referral,6.8.0,f66a-approved,approved,high
+GEN-SUM-3,evidence summarisation,3.2.4,g324-approved,conditional,medium

@@ -1,0 +1,5 @@
+---
+description: Evidence-first engineering
+alwaysApply: true
+---
+Separate fact, inference, conflict, missing evidence, recommendation and prohibited action. Every material fact must reference evidence.

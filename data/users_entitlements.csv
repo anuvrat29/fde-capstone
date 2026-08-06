@@ -1,0 +1,4 @@
+user_id,role,legal_entity,scope,status,revoked_at
+USR-ADJ-9,third_party_adjuster,AMR India General,CAT-NILA,revoked,2026-07-30T06:00:00Z
+USR-CLM-1,claims_officer,AMR India General,property_claims,active,
+USR-UW-4,life_underwriter,AMR Life UK,life_uk,active,

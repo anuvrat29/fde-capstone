@@ -1,0 +1,21 @@
+{
+  "policy_id": "POL-IN-HO-1001",
+  "period": {
+    "start": "2026-01-01T00:00:00+05:30"
+  },
+  "contractChanges": [
+    {
+      "id": "END-771",
+      "effectiveAt": "2026-07-28T00:00:00+05:30"
+    }
+  ],
+  "parties": [
+    {
+      "id": "PTY-001",
+      "roles": [
+        "policyholder",
+        "insured"
+      ]
+    }
+  ]
+}

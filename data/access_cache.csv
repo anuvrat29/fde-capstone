@@ -1,0 +1,3 @@
+user_id,cached_status,cached_at,ttl_minutes,gateway
+USR-ADJ-9,active,2026-07-30T05:50:00Z,1440,AI-GW-AP
+USR-CLM-1,active,2026-08-01T01:00:00Z,30,AI-GW-AP

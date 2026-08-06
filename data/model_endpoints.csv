@@ -1,0 +1,7 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+MODEL_ENDPOI-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic model_endpoints evidence row 1; deliberately mixed authority.
+MODEL_ENDPOI-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic model_endpoints evidence row 2; deliberately mixed authority.
+MODEL_ENDPOI-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic model_endpoints evidence row 3; deliberately mixed authority.
+MODEL_ENDPOI-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic model_endpoints evidence row 4; deliberately mixed authority.
+INJ-093-MODEL_ENDPOINTS,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,Regional outage,CASE-PACK,MULTI,The primary AI region fails during catastrophe triage and statutory reporting deadlines. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions.
+INJ-095-MODEL_ENDPOINTS,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,Fallback regression,CASE-PACK,MULTI,A smaller fallback model preserves JSON schema but loses coverage fidelity and multilingual accuracy. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions.

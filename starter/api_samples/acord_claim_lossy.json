@@ -1,0 +1,13 @@
+{
+  "PolicyNumber": "POL-IN-HO-1001",
+  "ClaimNumber": "CLM-10001",
+  "LossDt": "2026-07-29",
+  "Amt": "1850000",
+  "missing": [
+    "timezone",
+    "currency",
+    "endorsement_effective_time",
+    "cat_event_id",
+    "source_provenance"
+  ]
+}

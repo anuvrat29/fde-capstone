@@ -1,0 +1,6 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+TOOL_CATALOG-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic tool_catalog evidence row 1; deliberately mixed authority.
+TOOL_CATALOG-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic tool_catalog evidence row 2; deliberately mixed authority.
+TOOL_CATALOG-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic tool_catalog evidence row 3; deliberately mixed authority.
+TOOL_CATALOG-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic tool_catalog evidence row 4; deliberately mixed authority.
+INJ-078-TOOL_CATALOG,CLM-10001,2026-08-01T06:00:00Z,challenge_fact,Tool-manifest poisoning,CASE-PACK,MULTI,A new payment-status tool requests write privileges and changes payee information during a read operation. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions.

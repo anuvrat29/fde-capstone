@@ -1,0 +1,961 @@
+[
+  {
+    "id": "INJ-001",
+    "domain": "D01 — Strategy, value and operating-model conflict",
+    "title": "Board catastrophe target",
+    "description": "The board demands a 20% reduction in catastrophe claim cycle time and a 12% expense-ratio improvement without weakening claims independence, reserving governance or consumer protections.",
+    "evidence": [
+      "board_requests.csv",
+      "kpi_conflicts.csv"
+    ]
+  },
+  {
+    "id": "INJ-002",
+    "domain": "D01 — Strategy, value and operating-model conflict",
+    "title": "No-AI challenge",
+    "description": "Process Excellence argues that policy-wording rationalisation, identity repair and workflow redesign can deliver most benefits without generative AI.",
+    "evidence": [
+      "no_ai_baselines.csv",
+      "process_bottlenecks.csv"
+    ]
+  },
+  {
+    "id": "INJ-003",
+    "domain": "D01 — Strategy, value and operating-model conflict",
+    "title": "Mutual versus shareholder tension",
+    "description": "The mutual parent prioritises member fairness while a listed subsidiary prioritises growth and combined-ratio targets.",
+    "evidence": [
+      "legal_entities.csv",
+      "strategy_conflicts.csv"
+    ]
+  },
+  {
+    "id": "INJ-004",
+    "domain": "D01 — Strategy, value and operating-model conflict",
+    "title": "Acquisition integration",
+    "description": "A recently acquired digital insurer uses different product identifiers, pricing factors, cloud tenancy and claims authority matrices.",
+    "evidence": [
+      "legal_entities.csv",
+      "system_inventory.csv"
+    ]
+  },
+  {
+    "id": "INJ-005",
+    "domain": "D01 — Strategy, value and operating-model conflict",
+    "title": "Prohibited autonomy",
+    "description": "The board prohibits autonomous binding, declinature, pricing, reserve changes, settlement, payment, policy cancellation, claim repudiation or treaty placement.",
+    "evidence": [
+      "ai_use_boundaries.csv",
+      "decision_rights.csv"
+    ]
+  },
+  {
+    "id": "INJ-006",
+    "domain": "D01 — Strategy, value and operating-model conflict",
+    "title": "Value leakage",
+    "description": "The business case excludes complaints, appeals, human review, litigation, regulatory remediation and model-change costs.",
+    "evidence": [
+      "cost_model.csv",
+      "staff_rates.csv"
+    ]
+  },
+  {
+    "id": "INJ-007",
+    "domain": "D02 — Product, policy and coverage lifecycle",
+    "title": "Policy version collision",
+    "description": "Three policy wordings with the same marketing name have different exclusions, endorsements and territorial limits.",
+    "evidence": [
+      "policy_products.csv",
+      "policy_wording_versions.csv"
+    ]
+  },
+  {
+    "id": "INJ-008",
+    "domain": "D02 — Product, policy and coverage lifecycle",
+    "title": "Endorsement timing conflict",
+    "description": "A flood endorsement was requested before loss but issued after loss; payment and effective dates disagree.",
+    "evidence": [
+      "policies.csv",
+      "endorsements.csv"
+    ]
+  },
+  {
+    "id": "INJ-009",
+    "domain": "D02 — Product, policy and coverage lifecycle",
+    "title": "Binder authority ambiguity",
+    "description": "A managing general agent bound a commercial risk above delegated authority during a portal outage.",
+    "evidence": [
+      "binder_events.csv",
+      "delegated_authorities.csv"
+    ]
+  },
+  {
+    "id": "INJ-010",
+    "domain": "D02 — Product, policy and coverage lifecycle",
+    "title": "Cancellation and reinstatement race",
+    "description": "Cancellation, premium receipt and reinstatement events arrived out of order across billing and policy administration.",
+    "evidence": [
+      "policies.csv",
+      "billing_events.csv"
+    ]
+  },
+  {
+    "id": "INJ-011",
+    "domain": "D02 — Product, policy and coverage lifecycle",
+    "title": "Master-policy certificate mismatch",
+    "description": "A group health certificate promises benefits not present in the master policy schedule.",
+    "evidence": [
+      "group_policies.csv",
+      "member_certificates.csv"
+    ]
+  },
+  {
+    "id": "INJ-012",
+    "domain": "D02 — Product, policy and coverage lifecycle",
+    "title": "Parametric trigger wording conflict",
+    "description": "The customer brochure describes rainfall at farm location, while the contract uses a named weather-station index.",
+    "evidence": [
+      "parametric_contracts.csv",
+      "marketing_materials.csv"
+    ]
+  },
+  {
+    "id": "INJ-013",
+    "domain": "D03 — Underwriting, pricing and actuarial model risk",
+    "title": "Protected-proxy pricing",
+    "description": "Motor pricing uses postcode, occupation and device variables that strongly proxy protected characteristics.",
+    "evidence": [
+      "pricing_factors.csv",
+      "fairness_metrics.csv"
+    ]
+  },
+  {
+    "id": "INJ-014",
+    "domain": "D03 — Underwriting, pricing and actuarial model risk",
+    "title": "Telematics firmware drift",
+    "description": "A firmware update changes harsh-braking counts and mileage aggregation without a pricing-model recalibration.",
+    "evidence": [
+      "telematics_events.csv",
+      "device_firmware.csv"
+    ]
+  },
+  {
+    "id": "INJ-015",
+    "domain": "D03 — Underwriting, pricing and actuarial model risk",
+    "title": "Catastrophe model version split",
+    "description": "Property accumulation reports use two catastrophe-model versions with materially different flood loss estimates.",
+    "evidence": [
+      "cat_models.csv",
+      "exposure_aggregates.csv"
+    ]
+  },
+  {
+    "id": "INJ-016",
+    "domain": "D03 — Underwriting, pricing and actuarial model risk",
+    "title": "Clinical underwriting conflict",
+    "description": "Life underwriting receives contradictory smoking, medication and laboratory evidence from different sources.",
+    "evidence": [
+      "life_applications.csv",
+      "medical_evidence.csv"
+    ]
+  },
+  {
+    "id": "INJ-017",
+    "domain": "D03 — Underwriting, pricing and actuarial model risk",
+    "title": "Unapproved external data",
+    "description": "A vendor supplies social and purchasing attributes without clear provenance or approved underwriting purpose.",
+    "evidence": [
+      "external_data_sources.csv",
+      "data_licenses.csv"
+    ]
+  },
+  {
+    "id": "INJ-018",
+    "domain": "D03 — Underwriting, pricing and actuarial model risk",
+    "title": "Renewal price walking risk",
+    "description": "Home and motor renewal premiums diverge from equivalent new-business offers through channel-specific factors.",
+    "evidence": [
+      "quotes.csv",
+      "renewals.csv"
+    ]
+  },
+  {
+    "id": "INJ-019",
+    "domain": "D03 — Underwriting, pricing and actuarial model risk",
+    "title": "Sparse specialty portfolio",
+    "description": "A cyber model extrapolates from a small, non-representative loss history and ignores silent-cyber exposure.",
+    "evidence": [
+      "cyber_risks.csv",
+      "model_performance.csv"
+    ]
+  },
+  {
+    "id": "INJ-020",
+    "domain": "D03 — Underwriting, pricing and actuarial model risk",
+    "title": "Underwriter override opacity",
+    "description": "High-value commercial risks show unexplained overrides concentrated by office and broker.",
+    "evidence": [
+      "underwriting_decisions.csv",
+      "override_events.csv"
+    ]
+  },
+  {
+    "id": "INJ-021",
+    "domain": "D04 — Claims, coverage, litigation and reserving evidence",
+    "title": "Duplicate catastrophe claims",
+    "description": "The same property loss appears under household, landlord and small-business policies with different addresses.",
+    "evidence": [
+      "claims.csv",
+      "claimant_identities.csv"
+    ]
+  },
+  {
+    "id": "INJ-022",
+    "domain": "D04 — Claims, coverage, litigation and reserving evidence",
+    "title": "Coverage temporal ambiguity",
+    "description": "Loss time is uncertain across local time, UTC, daylight-saving transition and sensor timestamps.",
+    "evidence": [
+      "loss_events.csv",
+      "timezone_rules.csv"
+    ]
+  },
+  {
+    "id": "INJ-023",
+    "domain": "D04 — Claims, coverage, litigation and reserving evidence",
+    "title": "Repair estimate manipulation",
+    "description": "A repair network submits near-identical images and inflated line items across unrelated motor claims.",
+    "evidence": [
+      "repair_estimates.csv",
+      "image_forensics.csv"
+    ]
+  },
+  {
+    "id": "INJ-024",
+    "domain": "D04 — Claims, coverage, litigation and reserving evidence",
+    "title": "Medical necessity conflict",
+    "description": "Health pre-authorisation, provider invoice and clinical note disagree on procedure code and medical necessity.",
+    "evidence": [
+      "health_claims.csv",
+      "provider_records.csv"
+    ]
+  },
+  {
+    "id": "INJ-025",
+    "domain": "D04 — Claims, coverage, litigation and reserving evidence",
+    "title": "Life contestability boundary",
+    "description": "A death claim falls near the contestability boundary and the application has a disputed disclosure.",
+    "evidence": [
+      "life_claims.csv",
+      "policy_applications.csv"
+    ]
+  },
+  {
+    "id": "INJ-026",
+    "domain": "D04 — Claims, coverage, litigation and reserving evidence",
+    "title": "Litigation hold versus deletion",
+    "description": "A customer requests deletion while the claim, complaint and related class action are under legal hold.",
+    "evidence": [
+      "deletion_requests.csv",
+      "legal_holds.csv"
+    ]
+  },
+  {
+    "id": "INJ-027",
+    "domain": "D04 — Claims, coverage, litigation and reserving evidence",
+    "title": "Reserve leakage",
+    "description": "A batch job overwrote case reserves with model suggestions in one subsidiary despite advisory-only policy.",
+    "evidence": [
+      "claim_reserves.csv",
+      "audit_events.csv"
+    ]
+  },
+  {
+    "id": "INJ-028",
+    "domain": "D04 — Claims, coverage, litigation and reserving evidence",
+    "title": "Subrogation ownership conflict",
+    "description": "Two insurers and a recovery vendor assert rights over the same commercial loss recovery.",
+    "evidence": [
+      "subrogation_cases.csv",
+      "recovery_contracts.csv"
+    ]
+  },
+  {
+    "id": "INJ-029",
+    "domain": "D05 — Catastrophe, property, motor and parametric operations",
+    "title": "Cyclone-flood compound event",
+    "description": "Cyclone Nila creates wind, storm-surge, river-flood and business-interruption losses across shared locations.",
+    "evidence": [
+      "cat_events.csv",
+      "exposure_locations.csv"
+    ]
+  },
+  {
+    "id": "INJ-030",
+    "domain": "D05 — Catastrophe, property, motor and parametric operations",
+    "title": "Geospatial address collision",
+    "description": "One apartment complex has six address forms and two geocodes, fragmenting accumulation and duplicate detection.",
+    "evidence": [
+      "addresses.csv",
+      "geocodes.csv"
+    ]
+  },
+  {
+    "id": "INJ-031",
+    "domain": "D05 — Catastrophe, property, motor and parametric operations",
+    "title": "Drone evidence authenticity",
+    "description": "Post-loss drone imagery has missing signatures and one flight path conflicts with claimed capture time.",
+    "evidence": [
+      "drone_images.csv",
+      "drone_flights.csv"
+    ]
+  },
+  {
+    "id": "INJ-032",
+    "domain": "D05 — Catastrophe, property, motor and parametric operations",
+    "title": "Business-interruption dependency",
+    "description": "A manufacturer has little physical damage but depends on a failed sole-source supplier outside the insured zone.",
+    "evidence": [
+      "commercial_claims.csv",
+      "supply_dependencies.csv"
+    ]
+  },
+  {
+    "id": "INJ-033",
+    "domain": "D05 — Catastrophe, property, motor and parametric operations",
+    "title": "EV battery escalation",
+    "description": "A minor collision becomes a thermal event after towing, creating causation and salvage disputes.",
+    "evidence": [
+      "motor_claims.csv",
+      "vehicle_telemetry.csv"
+    ]
+  },
+  {
+    "id": "INJ-034",
+    "domain": "D05 — Catastrophe, property, motor and parametric operations",
+    "title": "Parametric sensor spoofing",
+    "description": "Rainfall sensor data exceeds the trigger, but neighbouring stations and satellite estimates disagree.",
+    "evidence": [
+      "weather_observations.csv",
+      "parametric_contracts.csv"
+    ]
+  },
+  {
+    "id": "INJ-035",
+    "domain": "D05 — Catastrophe, property, motor and parametric operations",
+    "title": "Catastrophe vendor outage",
+    "description": "The primary imagery and hazard vendor is unavailable during peak triage.",
+    "evidence": [
+      "vendor_status.csv",
+      "downtime_events.csv"
+    ]
+  },
+  {
+    "id": "INJ-036",
+    "domain": "D05 — Catastrophe, property, motor and parametric operations",
+    "title": "Emergency payment pressure",
+    "description": "Executives request rapid hardship advances before coverage, sanctions and duplicate checks are complete.",
+    "evidence": [
+      "emergency_payment_requests.csv",
+      "claims.csv"
+    ]
+  },
+  {
+    "id": "INJ-037",
+    "domain": "D06 — Life, health, disability and sensitive-risk operations",
+    "title": "Provider identity collision",
+    "description": "A hospital group uses reused provider identifiers after an acquisition, corrupting network and fraud analytics.",
+    "evidence": [
+      "providers.csv",
+      "provider_aliases.csv"
+    ]
+  },
+  {
+    "id": "INJ-038",
+    "domain": "D06 — Life, health, disability and sensitive-risk operations",
+    "title": "Health-code version mismatch",
+    "description": "ICD, CPT and local procedure codes use different effective versions across claim, pre-auth and policy rules.",
+    "evidence": [
+      "health_claims.csv",
+      "terminology_versions.csv"
+    ]
+  },
+  {
+    "id": "INJ-039",
+    "domain": "D06 — Life, health, disability and sensitive-risk operations",
+    "title": "Mental-health privacy boundary",
+    "description": "Behavioural-health notes are exposed to a general claims summarisation workflow beyond minimum necessary use.",
+    "evidence": [
+      "clinical_notes.csv",
+      "access_policies.csv"
+    ]
+  },
+  {
+    "id": "INJ-040",
+    "domain": "D06 — Life, health, disability and sensitive-risk operations",
+    "title": "Disability functional conflict",
+    "description": "Employer, physician, wearable and claimant evidence disagree on functional limitation and return-to-work dates.",
+    "evidence": [
+      "disability_claims.csv",
+      "functional_evidence.csv"
+    ]
+  },
+  {
+    "id": "INJ-041",
+    "domain": "D06 — Life, health, disability and sensitive-risk operations",
+    "title": "Genetic-information exclusion",
+    "description": "A life-risk feature store contains family-history and genetic indicators prohibited or restricted in some jurisdictions.",
+    "evidence": [
+      "feature_store.csv",
+      "jurisdiction_rules.csv"
+    ]
+  },
+  {
+    "id": "INJ-042",
+    "domain": "D06 — Life, health, disability and sensitive-risk operations",
+    "title": "Dependent eligibility mismatch",
+    "description": "A newborn is covered under a grace rule in one system but absent from the membership file.",
+    "evidence": [
+      "member_eligibility.csv",
+      "health_claims.csv"
+    ]
+  },
+  {
+    "id": "INJ-043",
+    "domain": "D06 — Life, health, disability and sensitive-risk operations",
+    "title": "Wellness consent withdrawal",
+    "description": "A member withdraws consent for wearable use, but the data remains in pricing and engagement features.",
+    "evidence": [
+      "consents.csv",
+      "feature_store.csv"
+    ]
+  },
+  {
+    "id": "INJ-044",
+    "domain": "D06 — Life, health, disability and sensitive-risk operations",
+    "title": "Provider outage and continuity",
+    "description": "A claims clearinghouse outage forces manual submissions with incomplete coding and duplicate risk.",
+    "evidence": [
+      "downtime_events.csv",
+      "manual_claim_intake.csv"
+    ]
+  },
+  {
+    "id": "INJ-045",
+    "domain": "D07 — Fraud, financial crime and adversarial behaviour",
+    "title": "Fraud-ring graph ambiguity",
+    "description": "Shared devices, addresses and repairers suggest a ring, but some links are legitimate household or fleet relationships.",
+    "evidence": [
+      "fraud_links.csv",
+      "claimant_identities.csv"
+    ]
+  },
+  {
+    "id": "INJ-046",
+    "domain": "D07 — Fraud, financial crime and adversarial behaviour",
+    "title": "Synthetic identity",
+    "description": "A life applicant combines valid government, credit and employer attributes belonging to different people.",
+    "evidence": [
+      "identity_checks.csv",
+      "life_applications.csv"
+    ]
+  },
+  {
+    "id": "INJ-047",
+    "domain": "D07 — Fraud, financial crime and adversarial behaviour",
+    "title": "Sanctions-name collision",
+    "description": "A claimant name matches a sanctions record but date of birth and nationality are incomplete.",
+    "evidence": [
+      "sanctions_screening.csv",
+      "claimant_identities.csv"
+    ]
+  },
+  {
+    "id": "INJ-048",
+    "domain": "D07 — Fraud, financial crime and adversarial behaviour",
+    "title": "Insider claim manipulation",
+    "description": "A claims handler repeatedly changes payee details shortly before payment approval.",
+    "evidence": [
+      "payment_changes.csv",
+      "audit_events.csv"
+    ]
+  },
+  {
+    "id": "INJ-049",
+    "domain": "D07 — Fraud, financial crime and adversarial behaviour",
+    "title": "Document deepfake",
+    "description": "A commercial fire claim includes an AI-generated invoice and altered certificate.",
+    "evidence": [
+      "claim_documents.csv",
+      "document_forensics.csv"
+    ]
+  },
+  {
+    "id": "INJ-050",
+    "domain": "D07 — Fraud, financial crime and adversarial behaviour",
+    "title": "Fraud-model feedback loop",
+    "description": "Investigations focus on model-selected groups, creating biased labels and apparent performance improvement.",
+    "evidence": [
+      "fraud_referrals.csv",
+      "model_training_labels.csv"
+    ]
+  },
+  {
+    "id": "INJ-051",
+    "domain": "D08 — Reinsurance, capital, reserving and finance",
+    "title": "Treaty wording ambiguity",
+    "description": "A catastrophe treaty differs between slip, signed wording and bordereaux mapping for hours clause and flood aggregation.",
+    "evidence": [
+      "reinsurance_treaties.csv",
+      "treaty_documents.csv"
+    ]
+  },
+  {
+    "id": "INJ-052",
+    "domain": "D08 — Reinsurance, capital, reserving and finance",
+    "title": "Event-definition conflict",
+    "description": "Claims teams use one catastrophe event ID while reinsurers apply different hours and geographic aggregation.",
+    "evidence": [
+      "cat_events.csv",
+      "reinsurance_events.csv"
+    ]
+  },
+  {
+    "id": "INJ-053",
+    "domain": "D08 — Reinsurance, capital, reserving and finance",
+    "title": "Bordereaux currency error",
+    "description": "Paid and outstanding amounts mix USD, EUR, INR and GBP using inconsistent valuation dates.",
+    "evidence": [
+      "bordereaux.csv",
+      "fx_rates.csv"
+    ]
+  },
+  {
+    "id": "INJ-054",
+    "domain": "D08 — Reinsurance, capital, reserving and finance",
+    "title": "Facultative placement gap",
+    "description": "A high-value location appears bound in broker email but absent from the reinsurance administration system.",
+    "evidence": [
+      "facultative_placements.csv",
+      "broker_correspondence.csv"
+    ]
+  },
+  {
+    "id": "INJ-055",
+    "domain": "D08 — Reinsurance, capital, reserving and finance",
+    "title": "Reserve model drift",
+    "description": "Inflation, repair duration and litigation severity move outside the reserving model training range.",
+    "evidence": [
+      "claim_reserves.csv",
+      "reserving_assumptions.csv"
+    ]
+  },
+  {
+    "id": "INJ-056",
+    "domain": "D08 — Reinsurance, capital, reserving and finance",
+    "title": "IFRS 17 grouping conflict",
+    "description": "Acquired portfolios map inconsistently to cohorts, profitability groups and contract boundaries.",
+    "evidence": [
+      "ifrs17_groups.csv",
+      "policy_products.csv"
+    ]
+  },
+  {
+    "id": "INJ-057",
+    "domain": "D08 — Reinsurance, capital, reserving and finance",
+    "title": "Capital-model concentration",
+    "description": "Cloud, cyber and catastrophe dependencies create correlated exposures not represented in the internal model.",
+    "evidence": [
+      "capital_scenarios.csv",
+      "vendor_dependencies.csv"
+    ]
+  },
+  {
+    "id": "INJ-058",
+    "domain": "D08 — Reinsurance, capital, reserving and finance",
+    "title": "Collateral dispute",
+    "description": "A reinsurer collateral balance is stale during a ratings downgrade and large-loss notification.",
+    "evidence": [
+      "reinsurance_collateral.csv",
+      "counterparty_ratings.csv"
+    ]
+  },
+  {
+    "id": "INJ-059",
+    "domain": "D09 — Distribution, conduct, complaints and customer outcomes",
+    "title": "Bancassurance mis-selling",
+    "description": "Recorded calls, sales script and suitability declaration conflict for a savings-linked protection product.",
+    "evidence": [
+      "sales_interactions.csv",
+      "suitability_records.csv"
+    ]
+  },
+  {
+    "id": "INJ-060",
+    "domain": "D09 — Distribution, conduct, complaints and customer outcomes",
+    "title": "Broker remuneration conflict",
+    "description": "A broker receives higher commission for a product with narrower coverage and more exclusions.",
+    "evidence": [
+      "broker_commissions.csv",
+      "product_comparisons.csv"
+    ]
+  },
+  {
+    "id": "INJ-061",
+    "domain": "D09 — Distribution, conduct, complaints and customer outcomes",
+    "title": "Dark-pattern renewal",
+    "description": "The mobile journey makes cancellation difficult and preselects optional covers.",
+    "evidence": [
+      "digital_journeys.csv",
+      "usability_findings.csv"
+    ]
+  },
+  {
+    "id": "INJ-062",
+    "domain": "D09 — Distribution, conduct, complaints and customer outcomes",
+    "title": "Complaint clock mismatch",
+    "description": "Complaint receipt dates differ across email, branch, ombudsman and CRM systems.",
+    "evidence": [
+      "complaints.csv",
+      "communication_events.csv"
+    ]
+  },
+  {
+    "id": "INJ-063",
+    "domain": "D09 — Distribution, conduct, complaints and customer outcomes",
+    "title": "Vulnerable customer handling",
+    "description": "A hardship claimant repeatedly discloses disability and bereavement but is routed through generic automation.",
+    "evidence": [
+      "customer_vulnerability.csv",
+      "contact_history.csv"
+    ]
+  },
+  {
+    "id": "INJ-064",
+    "domain": "D09 — Distribution, conduct, complaints and customer outcomes",
+    "title": "Multilingual wording inequity",
+    "description": "Translated policy summaries omit material limitations present in the authoritative wording.",
+    "evidence": [
+      "translations.csv",
+      "policy_wording_versions.csv"
+    ]
+  },
+  {
+    "id": "INJ-065",
+    "domain": "D10 — Data, interoperability, ontology and evidence authority",
+    "title": "Party-role confusion",
+    "description": "The same person may be policyholder, insured, claimant, beneficiary, driver, employee and broker contact.",
+    "evidence": [
+      "parties.csv",
+      "party_roles.csv"
+    ]
+  },
+  {
+    "id": "INJ-066",
+    "domain": "D10 — Data, interoperability, ontology and evidence authority",
+    "title": "Policy-claim identifier collision",
+    "description": "Legacy policy numbers are reused across countries and product lines.",
+    "evidence": [
+      "policies.csv",
+      "identifier_crosswalk.csv"
+    ]
+  },
+  {
+    "id": "INJ-067",
+    "domain": "D10 — Data, interoperability, ontology and evidence authority",
+    "title": "ACORD mapping loss",
+    "description": "An integration drops endorsement effective time, reserve currency and catastrophe event identifier.",
+    "evidence": [
+      "acord_messages.csv",
+      "integration_errors.csv"
+    ]
+  },
+  {
+    "id": "INJ-068",
+    "domain": "D10 — Data, interoperability, ontology and evidence authority",
+    "title": "Source-authority conflict",
+    "description": "Data lake snapshots, core systems, adjuster notes and signed documents disagree on material facts.",
+    "evidence": [
+      "source_authority.csv",
+      "evidence_conflicts.csv"
+    ]
+  },
+  {
+    "id": "INJ-069",
+    "domain": "D10 — Data, interoperability, ontology and evidence authority",
+    "title": "Ontology scope dispute",
+    "description": "Teams disagree whether peril, cause, damage, coverage, exclusion and event should be distinct entities.",
+    "evidence": [
+      "glossary_conflicts.csv",
+      "ontology_seed.csv"
+    ]
+  },
+  {
+    "id": "INJ-070",
+    "domain": "D10 — Data, interoperability, ontology and evidence authority",
+    "title": "Graph overreach",
+    "description": "Architects propose a knowledge graph for questions that reliable SQL and document retrieval may already solve.",
+    "evidence": [
+      "graph_candidate_questions.csv",
+      "no_ai_baselines.csv"
+    ]
+  },
+  {
+    "id": "INJ-071",
+    "domain": "D11 — Privacy, cross-border, retention and secondary use",
+    "title": "Purpose expansion",
+    "description": "Claims images and health data are proposed for enterprise model training beyond original processing purpose.",
+    "evidence": [
+      "consents.csv",
+      "data_use_requests.csv"
+    ]
+  },
+  {
+    "id": "INJ-072",
+    "domain": "D11 — Privacy, cross-border, retention and secondary use",
+    "title": "Cross-border replica",
+    "description": "EU and Indian policyholder data is replicated into an unapproved analytics region.",
+    "evidence": [
+      "data_residency.csv",
+      "backup_inventory.csv"
+    ]
+  },
+  {
+    "id": "INJ-073",
+    "domain": "D11 — Privacy, cross-border, retention and secondary use",
+    "title": "Household inference",
+    "description": "Connected-home data reveals occupancy, religion-related routines and health conditions not required for cover.",
+    "evidence": [
+      "iot_events.csv",
+      "privacy_risk.csv"
+    ]
+  },
+  {
+    "id": "INJ-074",
+    "domain": "D11 — Privacy, cross-border, retention and secondary use",
+    "title": "Telematics family surveillance",
+    "description": "A policyholder receives scores inferred from journeys made by other household drivers.",
+    "evidence": [
+      "telematics_events.csv",
+      "driver_assignments.csv"
+    ]
+  },
+  {
+    "id": "INJ-075",
+    "domain": "D11 — Privacy, cross-border, retention and secondary use",
+    "title": "Retention conflict",
+    "description": "Fraud, tax, litigation, actuarial and customer-deletion rules specify different retention periods.",
+    "evidence": [
+      "retention_rules.csv",
+      "deletion_requests.csv"
+    ]
+  },
+  {
+    "id": "INJ-076",
+    "domain": "D11 — Privacy, cross-border, retention and secondary use",
+    "title": "Free-text oversharing",
+    "description": "Claims notes contain health, financial, family and immigration information unrelated to claim handling.",
+    "evidence": [
+      "claim_notes.csv",
+      "privacy_risk.csv"
+    ]
+  },
+  {
+    "id": "INJ-077",
+    "domain": "D12 — Cybersecurity, agentic security and Zero Trust",
+    "title": "Prompt injection in adjuster report",
+    "description": "A repairer report contains hidden instructions telling the AI to approve coverage and ignore fraud alerts.",
+    "evidence": [
+      "knowledge_catalog.csv",
+      "MALICIOUS_ADJUSTER_REPORT.md"
+    ]
+  },
+  {
+    "id": "INJ-078",
+    "domain": "D12 — Cybersecurity, agentic security and Zero Trust",
+    "title": "Tool-manifest poisoning",
+    "description": "A new payment-status tool requests write privileges and changes payee information during a read operation.",
+    "evidence": [
+      "tool_catalog.csv",
+      "tool_manifest_poisoned.json"
+    ]
+  },
+  {
+    "id": "INJ-079",
+    "domain": "D12 — Cybersecurity, agentic security and Zero Trust",
+    "title": "Revocation cache lag",
+    "description": "A terminated third-party adjuster remains authorized in the AI gateway cache.",
+    "evidence": [
+      "users_entitlements.csv",
+      "access_cache.csv"
+    ]
+  },
+  {
+    "id": "INJ-080",
+    "domain": "D12 — Cybersecurity, agentic security and Zero Trust",
+    "title": "Ransomware containment",
+    "description": "Policy administration is read-only, claims images are offline and payment systems operate in degraded mode.",
+    "evidence": [
+      "downtime_events.csv",
+      "network_zones.csv"
+    ]
+  },
+  {
+    "id": "INJ-081",
+    "domain": "D12 — Cybersecurity, agentic security and Zero Trust",
+    "title": "Model artefact mismatch",
+    "description": "A model package hash differs from the approved registry after an emergency vendor patch.",
+    "evidence": [
+      "model_registry.csv",
+      "model_artifacts.csv"
+    ]
+  },
+  {
+    "id": "INJ-082",
+    "domain": "D12 — Cybersecurity, agentic security and Zero Trust",
+    "title": "Cross-tenant leakage",
+    "description": "A crafted broker query retrieves claim narratives from another legal entity.",
+    "evidence": [
+      "security_events.csv",
+      "tenant_boundaries.csv"
+    ]
+  },
+  {
+    "id": "INJ-083",
+    "domain": "D13 — Responsible AI, fairness, explainability and human factors",
+    "title": "Claims automation bias",
+    "description": "Handlers accept an AI summary that omits an endorsement favourable to the claimant.",
+    "evidence": [
+      "candidate_outputs.csv",
+      "reviewer_feedback.csv"
+    ]
+  },
+  {
+    "id": "INJ-084",
+    "domain": "D13 — Responsible AI, fairness, explainability and human factors",
+    "title": "Subgroup false positives",
+    "description": "Fraud referral rates and false positives are materially higher for specific regions, languages and low-income proxies.",
+    "evidence": [
+      "fairness_metrics.csv",
+      "fraud_referrals.csv"
+    ]
+  },
+  {
+    "id": "INJ-085",
+    "domain": "D13 — Responsible AI, fairness, explainability and human factors",
+    "title": "Unexplainable adverse outcome",
+    "description": "A life underwriting recommendation cannot identify the controlling evidence or policy rule.",
+    "evidence": [
+      "underwriting_decisions.csv",
+      "explanation_tests.csv"
+    ]
+  },
+  {
+    "id": "INJ-086",
+    "domain": "D13 — Responsible AI, fairness, explainability and human factors",
+    "title": "Language performance gap",
+    "description": "Arabic, Hindi and German claims show lower extraction and citation accuracy than English.",
+    "evidence": [
+      "model_performance.csv",
+      "multilingual_claims.csv"
+    ]
+  },
+  {
+    "id": "INJ-087",
+    "domain": "D13 — Responsible AI, fairness, explainability and human factors",
+    "title": "Accessibility failure",
+    "description": "The proposed portal uses colour-only severity, inaccessible PDFs and mouse-only approval controls.",
+    "evidence": [
+      "usability_findings.csv"
+    ]
+  },
+  {
+    "id": "INJ-088",
+    "domain": "D13 — Responsible AI, fairness, explainability and human factors",
+    "title": "Accountability conflict",
+    "description": "Global AI owners seek standard automation while local claims officers, actuaries and compliance leaders retain legal accountability.",
+    "evidence": [
+      "decision_rights.csv",
+      "stakeholders.csv"
+    ]
+  },
+  {
+    "id": "INJ-089",
+    "domain": "D14 — Token economics, FinOps and vendor concentration",
+    "title": "Model price shock",
+    "description": "The preferred provider raises input-token prices by 65% and removes cached-input discounts.",
+    "evidence": [
+      "model_costs.csv",
+      "vendor_contracts.csv"
+    ]
+  },
+  {
+    "id": "INJ-090",
+    "domain": "D14 — Token economics, FinOps and vendor concentration",
+    "title": "Denial-of-wallet",
+    "description": "Repeated oversized claim bundles and image reprocessing cause abnormal inference, OCR and embedding cost.",
+    "evidence": [
+      "model_usage.csv",
+      "security_events.csv"
+    ]
+  },
+  {
+    "id": "INJ-091",
+    "domain": "D14 — Token economics, FinOps and vendor concentration",
+    "title": "Hidden unit economics",
+    "description": "Cost per successful claim excludes human review, appeals, false-positive investigations and observability.",
+    "evidence": [
+      "cost_model.csv",
+      "staff_rates.csv"
+    ]
+  },
+  {
+    "id": "INJ-092",
+    "domain": "D14 — Token economics, FinOps and vendor concentration",
+    "title": "Stack concentration",
+    "description": "One vendor hosts model, vector store, OCR, evaluation, observability and key management.",
+    "evidence": [
+      "vendor_dependencies.csv",
+      "vendor_contracts.csv"
+    ]
+  },
+  {
+    "id": "INJ-093",
+    "domain": "D15 — Reliability, continuity, change and retirement",
+    "title": "Regional outage",
+    "description": "The primary AI region fails during catastrophe triage and statutory reporting deadlines.",
+    "evidence": [
+      "downtime_events.csv",
+      "model_endpoints.csv"
+    ]
+  },
+  {
+    "id": "INJ-094",
+    "domain": "D15 — Reliability, continuity, change and retirement",
+    "title": "Checkpoint replay",
+    "description": "A recovery agent resumes stale state and creates duplicate draft payments and reinsurer notices.",
+    "evidence": [
+      "agent_runs.csv",
+      "idempotency_records.csv"
+    ]
+  },
+  {
+    "id": "INJ-095",
+    "domain": "D15 — Reliability, continuity, change and retirement",
+    "title": "Fallback regression",
+    "description": "A smaller fallback model preserves JSON schema but loses coverage fidelity and multilingual accuracy.",
+    "evidence": [
+      "model_performance.csv",
+      "model_endpoints.csv"
+    ]
+  },
+  {
+    "id": "INJ-096",
+    "domain": "D15 — Reliability, continuity, change and retirement",
+    "title": "AI-disabled continuity and exit",
+    "description": "The insurer must operate for 21 days without model inference while a strategic vendor exits in 120 days and historical evidence remains inspectable.",
+    "evidence": [
+      "continuity_requirements.csv",
+      "vendor_exit_assets.csv"
+    ]
+  }
+]

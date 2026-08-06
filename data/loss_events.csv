@@ -1,0 +1,4 @@
+loss_event_id,claim_ids,occurred_start,occurred_end,reported_timezone,normalized_start_utc,normalized_end_utc,peril,source_system,status,notes
+LOSS-NILA-01,CLM-10001;CLM-10002,2026-07-28T23:15:00+05:30,2026-07-29T03:10:00+05:30,Asia/Kolkata,2026-07-28T17:45:00Z,2026-07-28T21:40:00Z,flood_and_business_interruption,FieldOps+IoT,disputed_window,Sensor start and local operator report differ by 35 minutes; preserve both timestamps.
+LOSS-EV-42,CLM-20042,2026-07-30T14:55:00+02:00,2026-07-30T15:08:00+02:00,Europe/Berlin,2026-07-30T12:55:00Z,2026-07-30T13:08:00Z,collision_fire,DrivePulse+PoliceExtract,corroborated,Vehicle clock firmware version must be checked before using second-level telemetry.
+LOSS-RANSOM-778,CLM-90008,2026-07-28T09:40:00-06:00,,America/Denver,2026-07-28T15:40:00Z,,cyber_interruption,SecurityIncidentRegister,open_ended,Dependent-business-interruption and originating-cause evidence remain incomplete.

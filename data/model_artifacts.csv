@@ -1,0 +1,3 @@
+model_id,deployed_version,observed_hash,registry_hash,region,status
+GEN-SUM-3,3.2.4-hotfix,g324-unknown,g324-approved,eu-west,mismatch
+FRD-CLAIM-6,6.8.0,f66a-approved,f66a-approved,ap-south,match

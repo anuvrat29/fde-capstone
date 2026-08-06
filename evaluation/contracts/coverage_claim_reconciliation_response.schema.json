@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Coverage Claim Reconciliation response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "workflow",
+    "case_id",
+    "status",
+    "facts",
+    "inferences",
+    "conflicts",
+    "missing_evidence",
+    "recommendations",
+    "prohibited_actions",
+    "evidence",
+    "authorization_context",
+    "human_review",
+    "lineage"
+  ],
+  "properties": {
+    "workflow": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "conflict",
+        "insufficient_evidence",
+        "escalated"
+      ]
+    },
+    "facts": {
+      "type": "array"
+    },
+    "inferences": {
+      "type": "array"
+    },
+    "conflicts": {
+      "type": "array"
+    },
+    "missing_evidence": {
+      "type": "array"
+    },
+    "recommendations": {
+      "type": "array"
+    },
+    "prohibited_actions": {
+      "type": "array"
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "authorization_context": {
+      "type": "object"
+    },
+    "human_review": {
+      "type": "object"
+    },
+    "lineage": {
+      "type": "object"
+    }
+  },
+  "x-workflow": "coverage_claim_reconciliation",
+  "x-prohibited-fields": [
+    "coverage_decision",
+    "claim_decision",
+    "approve",
+    "deny",
+    "repudiate",
+    "settlement",
+    "settlement_amount",
+    "payment_instruction",
+    "reserve_change"
+  ]
+}

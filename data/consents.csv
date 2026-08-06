@@ -1,0 +1,7 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+CONSENTS-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic consents evidence row 1; deliberately mixed authority.
+CONSENTS-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic consents evidence row 2; deliberately mixed authority.
+CONSENTS-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic consents evidence row 3; deliberately mixed authority.
+CONSENTS-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic consents evidence row 4; deliberately mixed authority.
+INJ-043-CONSENTS,PTY-001,2026-08-01T06:00:00Z,challenge_fact,Wellness consent withdrawal,CASE-PACK,MULTI,"A member withdraws consent for wearable use, but the data remains in pricing and engagement features. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."
+INJ-071-CONSENTS,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,Purpose expansion,CASE-PACK,MULTI,Claims images and health data are proposed for enterprise model training beyond original processing purpose. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions.

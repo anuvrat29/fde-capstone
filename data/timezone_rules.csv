@@ -1,0 +1,6 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+TIMEZONE_RUL-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic timezone_rules evidence row 1; deliberately mixed authority.
+TIMEZONE_RUL-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic timezone_rules evidence row 2; deliberately mixed authority.
+TIMEZONE_RUL-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic timezone_rules evidence row 3; deliberately mixed authority.
+TIMEZONE_RUL-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic timezone_rules evidence row 4; deliberately mixed authority.
+INJ-022-TIMEZONE_RULES,CLM-10001,2026-08-01T06:00:00Z,challenge_fact,Coverage temporal ambiguity,CASE-PACK,MULTI,"Loss time is uncertain across local time, UTC, daylight-saving transition and sensor timestamps. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."

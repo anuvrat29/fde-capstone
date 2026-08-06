@@ -1,0 +1,46 @@
+{
+  "workflow": "catastrophe_reinsurance_planning",
+  "case_id": "SYNTHETIC-CASE",
+  "status": "conflict",
+  "facts": [
+    "A supplied record exists."
+  ],
+  "inferences": [],
+  "conflicts": [
+    "Authority requires human review."
+  ],
+  "missing_evidence": [
+    "Controlling evidence not supplied."
+  ],
+  "recommendations": [
+    "Route to authorized human reviewer."
+  ],
+  "prohibited_actions": [
+    "No autonomous regulated action."
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E-1",
+      "source_path": "data/claims.csv",
+      "record_locator": "claim_id=CLM-10001",
+      "sha256": "e5eac9107cec28a85feb05f09f116565b075e1780dba60e3aefa431237adc01d",
+      "authority_status": "mixed",
+      "fact": "Synthetic claim record located."
+    }
+  ],
+  "authorization_context": {
+    "user_id": "WORKSHOP-REVIEWER",
+    "current": true,
+    "tenant": "AMR-SYNTHETIC",
+    "purpose": "evaluation"
+  },
+  "human_review": {
+    "required": true,
+    "owner_role": "authorized_reviewer"
+  },
+  "lineage": {
+    "prompt_version": "participant-defined",
+    "model_version": "participant-defined",
+    "contract_version": "v1"
+  }
+}

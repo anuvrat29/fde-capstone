@@ -1,0 +1,5 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+APPEALS-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic appeals evidence row 1; deliberately mixed authority.
+APPEALS-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic appeals evidence row 2; deliberately mixed authority.
+APPEALS-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic appeals evidence row 3; deliberately mixed authority.
+APPEALS-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic appeals evidence row 4; deliberately mixed authority.

@@ -1,0 +1,6 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+BOARD_REQUES-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic board_requests evidence row 1; deliberately mixed authority.
+BOARD_REQUES-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic board_requests evidence row 2; deliberately mixed authority.
+BOARD_REQUES-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic board_requests evidence row 3; deliberately mixed authority.
+BOARD_REQUES-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic board_requests evidence row 4; deliberately mixed authority.
+INJ-001-BOARD_REQUESTS,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,Board catastrophe target,CASE-PACK,MULTI,"The board demands a 20% reduction in catastrophe claim cycle time and a 12% expense-ratio improvement without weakening claims independence, reserving governance or consumer protections. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."

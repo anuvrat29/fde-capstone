@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AEGIS evidence item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "source_path",
+    "record_locator",
+    "sha256",
+    "authority_status",
+    "fact"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "source_path": {
+      "type": "string"
+    },
+    "record_locator": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "authority_status": {
+      "type": "string"
+    },
+    "fact": {
+      "type": "string"
+    }
+  }
+}

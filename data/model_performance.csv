@@ -1,0 +1,5 @@
+model_id,segment,groundedness,citation_accuracy,schema_pass
+GEN-SUM-3,English,0.91,0.94,0.99
+GEN-SUM-3,Hindi,0.72,0.69,0.96
+GEN-SUM-3,Arabic,0.68,0.64,0.95
+OM-Small,coverage_wording,0.70,0.62,0.99

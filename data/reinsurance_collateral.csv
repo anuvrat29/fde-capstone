@@ -1,0 +1,6 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+REINSURANCE_-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic reinsurance_collateral evidence row 1; deliberately mixed authority.
+REINSURANCE_-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic reinsurance_collateral evidence row 2; deliberately mixed authority.
+REINSURANCE_-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic reinsurance_collateral evidence row 3; deliberately mixed authority.
+REINSURANCE_-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic reinsurance_collateral evidence row 4; deliberately mixed authority.
+INJ-058-REINSURANCE_COLLATERAL,CLM-10001,2026-08-01T06:00:00Z,challenge_fact,Collateral dispute,CASE-PACK,MULTI,A reinsurer collateral balance is stale during a ratings downgrade and large-loss notification. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions.

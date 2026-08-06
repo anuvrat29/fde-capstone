@@ -1,0 +1,6 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+CAPITAL_SCEN-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic capital_scenarios evidence row 1; deliberately mixed authority.
+CAPITAL_SCEN-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic capital_scenarios evidence row 2; deliberately mixed authority.
+CAPITAL_SCEN-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic capital_scenarios evidence row 3; deliberately mixed authority.
+CAPITAL_SCEN-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic capital_scenarios evidence row 4; deliberately mixed authority.
+INJ-057-CAPITAL_SCENARIOS,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,Capital-model concentration,CASE-PACK,MULTI,"Cloud, cyber and catastrophe dependencies create correlated exposures not represented in the internal model. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."

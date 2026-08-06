@@ -1,0 +1,6 @@
+record_id,entity_id,event_time,status,value,source_system,jurisdiction,notes
+GLOSSARY_CON-001,POL-IN-HO-1001,2026-07-27T09:00:00Z,approved,baseline,CORE-A,IN,Synthetic glossary_conflicts evidence row 1; deliberately mixed authority.
+GLOSSARY_CON-002,CLM-10001,2026-07-29T04:00:00Z,conflict,material mismatch,VENDOR-B,DE,Synthetic glossary_conflicts evidence row 2; deliberately mixed authority.
+GLOSSARY_CON-003,PTY-001,2026-07-30T12:30:00Z,stale,out-of-order event,DATA-LAKE,US-CO,Synthetic glossary_conflicts evidence row 3; deliberately mixed authority.
+GLOSSARY_CON-004,CAT-NILA-A,2026-08-01T00:15:00Z,unverified,requires authority check,MANUAL-LOG,EU,Synthetic glossary_conflicts evidence row 4; deliberately mixed authority.
+INJ-069-GLOSSARY_CONFLICTS,POL-IN-HO-1001,2026-08-01T06:00:00Z,challenge_fact,Ontology scope dispute,CASE-PACK,MULTI,"Teams disagree whether peril, cause, damage, coverage, exclusion and event should be distinct entities. This synthetic row makes the disclosed inject executable; authority and outcome remain participant decisions."
