@@ -1,0 +1,119 @@
+# 09 Requirements Traceability
+
+## Purpose
+
+Business, user, functional, non-functional, control and evaluation traceability, consolidating the requirements implied by artefacts 01–08 and the mandatory operating properties in case/INTEGRATED_CASE.md Section 5 into one indexed matrix.
+
+## Acceptance criteria
+
+- The artefact is evidence-led and references supplied paths, record locators and inject IDs.
+- Facts, assumptions, inference, conflict, decision and residual risk are distinguishable.
+- Temporal, jurisdictional, authorization and authority boundaries are explicit where relevant.
+- Owners, approvals, review triggers and measurable acceptance gates are named.
+- The artefact contains no unsupported coverage, pricing, reserve, payment or treaty conclusion.
+
+## Artefact-specific acceptance criteria
+
+- Every CTRL-* control defined in artefacts 01–08 is assigned exactly one requirement ID (REQ-*) and appears in the traceability matrix below (CTRL-RT-01).
+- Every one of the 18 mandatory operating properties in case/INTEGRATED_CASE.md Section 5 has at least one non-functional requirement ID and is linked to at least one workflow (CTRL-RT-02).
+- No requirement is marked "satisfied"; every requirement's status is "documented" or "implemented" and, if "implemented", cites a code path under submission/src or submission/tests (CTRL-RT-03).
+- Every requirement traces to at least one inject or case-pack section, so no requirement is invented without evidence (CTRL-RT-04).
+
+## Scope and evidence register
+
+| Evidence ID | Source path and locator | Authority/status | Effective time | Jurisdiction | Use and limitation |
+|---|---|---|---|---|---|
+| EVID-036 | case/INTEGRATED_CASE.md Section 4 (Mandatory workflows) | approved/case-pack | 2026-08-01 | MULTI | Source of the three workflow-scoped functional requirements (REQ-F-01 to REQ-F-03) and their explicit prohibited actions. |
+| EVID-036 | case/INTEGRATED_CASE.md Section 5 (Required operating properties) | approved/case-pack | 2026-08-01 | MULTI | Same document, second section cited; source of 18 mandatory non-functional/operating-property requirements (REQ-NF-01 to REQ-NF-18); not yet individually enumerated in any prior artefact. |
+| — | submission/artefacts/01_BUSINESS_CASE.md through 08_KNOWLEDGE_GRAPH_DECISION.md | participant-authored | 2026-08-06 | — | Source of every CTRL-* control (CTRL-BC-*, CTRL-DMAIC-*, CTRL-SDR-*, CTRL-PSB-*, CTRL-DDD-*, CTRL-DGL-*, CTRL-OSL-*, CTRL-KGD-*), each mapped to one requirement ID below; no single record locator applies across eight files, so no evidence ID is assigned to this row — see evidence_manifest.csv EVID-001–EVID-035 for the underlying per-artefact evidence. |
+| EVID-026 | requirements/SCORING_MODEL.md (Mandatory non-compensable gates) | approved | 2026-01-01 | global | Source of the 8 non-compensable gates; each is cross-referenced to the requirement(s) it governs, distinct from the 200-point scored dimensions. |
+| EVID-037 | requirements/SCORING_RUBRIC.csv | approved | 2026-01-01 | global | Source of the 15 scoring dimensions (DIM-01 to DIM-15); used to confirm every requirement below maps to a scored dimension, not an invented one. |
+
+## Working assumptions and constraints
+
+| ID | Assumption or constraint | Basis | Impact if false | Validation owner | Due/review date |
+|---|---|---|---|---|---|
+| A-01 | The 18 comma-separated properties in case/INTEGRATED_CASE.md Section 5 ("purpose limitation, least privilege, current authorization, temporal and jurisdictional applicability, source authority, provenance, structured outputs, abstention, human review, contestability, idempotency, bounded steps, token and cost budgets, checkpointing, rollback, kill switch, degraded mode, auditability and AI-disabled continuity") are each independently testable and are enumerated here as REQ-NF-01 through REQ-NF-18, in the order listed in the case pack. | case/INTEGRATED_CASE.md Section 5 (verbatim list; 19 terms counted on re-reading — "temporal and jurisdictional applicability" and "auditability and AI-disabled continuity" are compound phrases treated as one requirement each, giving 18 distinct requirement rows, not 19) | Miscounting or merging properties would leave a mandatory operating property untested at evaluation time (template 22). | AI Product Owner | Before template 22 (Evaluation and TEVV) is drafted |
+| A-02 | Every requirement in this matrix must already exist as either a case-pack statement, an inject, or a CTRL-* control defined in artefacts 01–08; this artefact assigns IDs and traces, it does not invent new obligations. | submission/artefacts/01_BUSINESS_CASE.md through 08_KNOWLEDGE_GRAPH_DECISION.md (all CTRL-* controls); case/INTEGRATED_CASE.md Sections 4–5 | Inventing untraceable requirements would fail CTRL-RT-04 and create unverifiable claims at the final defence. | AI Product Owner | Ongoing |
+| A-03 | "Implemented" status is reserved strictly for requirements with a corresponding file under submission/src or submission/tests; as of this pass, no such files exist, so no requirement below may be marked "implemented". | Direct inspection: submission/src and submission/tests do not yet exist (confirmed in ARTEFACT_STATE_LOG.md Step 8/9 outstanding gaps) | Marking a requirement "implemented" without code would misrepresent the submission's actual state to a reviewer or panel. | AI Product Owner | Until submission/src or submission/tests is created |
+
+## Required analysis and decisions
+
+| Decision/question | Evidence | Analysis | Decision/output | Owner | Status |
+|---|---|---|---|---|---|
+| How should the three workflow mandates (case/INTEGRATED_CASE.md Section 4) be represented as functional requirements? | case/INTEGRATED_CASE.md Section 4; submission/artefacts/04_PRODUCT_SERVICE_BLUEPRINT.md | Each workflow already has a defined persona, job and prohibited-action list (04); this artefact assigns one functional requirement ID per workflow, each carrying its explicit prohibition as a non-negotiable acceptance clause. | REQ-F-01 (Workflow A), REQ-F-02 (Workflow B), REQ-F-03 (Workflow C) — see Traceability table | AI Product Owner | Decided |
+| How should the 18 mandatory operating properties (Section 5) be represented, given none has been individually traced in artefacts 01–08? | case/INTEGRATED_CASE.md Section 5 | No prior artefact enumerated these individually; several are partially covered incidentally (e.g., CTRL-DGL-01 covers "current authorization"; CTRL-PSB-04 covers part of "auditability"), but most have no assigned control yet. | REQ-NF-01 through REQ-NF-18 created; each linked to any existing CTRL-* that partially satisfies it, and flagged "documented, not yet controlled" where no prior CTRL-* exists | AI Product Owner | Decided — gap identified and recorded, not yet closed |
+| How should each CTRL-* control from artefacts 01–08 be indexed so no control is later lost or duplicated? | All eight completed artefacts | Extracted every CTRL-* ID and its owning artefact; assigned one REQ-C-* control-requirement ID per CTRL-*, preserving the original ID as a cross-reference rather than renaming it | 21 control-requirements (REQ-C-01 to REQ-C-21) recorded, one per existing CTRL-* | AI Product Owner | Decided |
+| Does every requirement map to a scored rubric dimension (requirements/SCORING_RUBRIC.csv), so nothing is scored twice or invented? | requirements/SCORING_RUBRIC.csv (DIM-01 to DIM-15) | REQ-F-01/02/03 map to DIM-07 (30 points, mandatory-gate-related); REQ-NF-* map variously to DIM-09 (security), DIM-10 (privacy/fairness), DIM-12 (evaluation), DIM-13 (FinOps), DIM-14 (reliability); REQ-C-* map to the dimension of their originating artefact (e.g., REQ-C-01/02/03 from 01_BUSINESS_CASE.md map to DIM-01) | Dimension mapping added as a column in the Traceability table below | AI Product Owner | Decided |
+
+## Alternatives and trade-offs
+
+| Option | Benefits | Risks | Cost/complexity | Reversibility | Decision and rationale |
+|---|---|---|---|---|---|
+| Treat requirements traceability as implicit — rely on each artefact's own "Traceability" table without a consolidating index | Lower documentation overhead; avoids a second bookkeeping layer | DEFINITION_OF_DONE requires "all 96 injects...mapped to requirements, controls, tests"; without one index, a reviewer must reconstruct coverage by reading all 32 artefacts, which is not defensible at a 25-minute panel defence | Low build cost now, very high reconstruction cost at defence time | Reversible but costly to redo under time pressure | Rejected. The final-defence format (requirements/FINAL_DEFENCE.md) requires the team to "trace any panel-selected inject to evidence, requirement, design decision, test result and residual risk" on demand — an implicit model cannot support that. |
+| Build one consolidated requirement ID scheme (REQ-F-*, REQ-NF-*, REQ-C-*) covering functional, non-functional and control requirements, cross-referenced to existing CTRL-* and inject IDs without renaming them | Single lookup table answers "what does REQ-X trace to" in one place; preserves all prior artefact IDs so no rework is needed in 01–08 | Requires discipline to keep this index updated as templates 10–32 are drafted | Medium — one-time indexing cost, ongoing maintenance cost per future artefact | Fully reversible; index can be regenerated from source artefacts if it drifts | Selected. Matches the DEFINITION_OF_DONE mapping requirement and the FINAL_DEFENCE.md traceability demand without renaming any existing control ID. |
+
+## Controls, tests and acceptance
+
+| Control/test ID | Risk or requirement | Method | Pass criterion | Evidence location | Owner |
+|---|---|---|---|---|---|
+| CTRL-RT-01 | Every CTRL-* control from artefacts 01–08 has exactly one REQ-C-* requirement ID and appears in the Traceability table | Cross-check count of CTRL-* mentions in artefacts 01–08 against REQ-C-* rows below | Count of REQ-C-* rows equals count of distinct CTRL-* IDs found by search (21 as of this pass) | This artefact, Traceability table | AI Product Owner |
+| CTRL-RT-02 | Every one of the 18 Section 5 operating properties has at least one REQ-NF-* ID and at least one workflow link | Manual mapping review against case/INTEGRATED_CASE.md Section 5 verbatim list | 18 REQ-NF-* rows exist, none merged or dropped, each naming at least one of Workflow A/B/C | This artefact, Traceability table | AI Product Owner |
+| CTRL-RT-03 | No requirement is marked "implemented" without a cited submission/src or submission/tests file | Review of the Status column for every requirement row | All rows show status "documented" (no implementation files exist yet per A-03); any future "implemented" status must cite a real path | This artefact, Traceability table | AI Product Owner |
+| CTRL-RT-04 | Every requirement traces to at least one inject ID or named case-pack section | Review of the Inject/Case-pack ref column for completeness | No row has a blank traceability reference | This artefact, Traceability table | Data Governance Owner |
+
+## Traceability
+
+| Requirement ID | Description | Type | Inject/case-pack ref | Originating CTRL-*/artefact | Scoring dimension | Status |
+|---|---|---|---|---|---|---|
+| REQ-F-01 | Workflow A must reconcile coverage/claim/fraud evidence and must never bind, repudiate, settle, reserve, pay, cancel or litigate a claim | Functional | case/INTEGRATED_CASE.md Section 4; INJ-005 | CTRL-PSB-01 (04_PRODUCT_SERVICE_BLUEPRINT.md) | DIM-07 (mandatory gate) | Documented |
+| REQ-F-02 | Workflow B must reconcile underwriting/pricing evidence and must never bind, decline, price, renew, cancel or modify a policy | Functional | case/INTEGRATED_CASE.md Section 4; INJ-005; INJ-020 | CTRL-PSB-02 (04_PRODUCT_SERVICE_BLUEPRINT.md); CTRL-SDR-02 (03_STAKEHOLDER_DECISION_RIGHTS.md) | DIM-07 (mandatory gate) | Documented |
+| REQ-F-03 | Workflow C must generate traceable catastrophe/reinsurance response options and must never create a payment, change a reserve, aggregate a treaty event, submit a recovery, allocate capital or instruct a vendor | Functional | case/INTEGRATED_CASE.md Section 4; INJ-005 | CTRL-PSB-03 (04_PRODUCT_SERVICE_BLUEPRINT.md) | DIM-07 (mandatory gate) | Documented |
+| REQ-NF-01 | Purpose limitation — every workflow action is scoped to its stated purpose and current authorized user | Non-functional | case/INTEGRATED_CASE.md Section 5 | No existing CTRL-* fully covers this; partially implied by CTRL-SDR-01 | DIM-09 | Documented, not yet controlled |
+| REQ-NF-02 | Least privilege — no workflow or role receives access beyond its decision rights | Non-functional | case/INTEGRATED_CASE.md Section 5; INJ-020 | CTRL-SDR-01 (03_STAKEHOLDER_DECISION_RIGHTS.md) | DIM-09 | Documented |
+| REQ-NF-03 | Current authorization — no workflow relies on a cached authorization status; authorization is re-checked at time of use | Non-functional | case/INTEGRATED_CASE.md Section 5; confirmed defect DEF-007 | CTRL-DGL-01 (06_DATA_GOVERNANCE_LINEAGE.md) | DIM-09 | Documented |
+| REQ-NF-04 | Temporal and jurisdictional applicability — every fact carries and preserves its effective time and jurisdiction; comparisons are normalized, not raw | Non-functional | case/INTEGRATED_CASE.md Section 5; INJ-022 | CTRL-OSL-02, CTRL-OSL-03 (07_ONTOLOGY_SEMANTIC_LAYER.md) | DIM-04 | Documented |
+| REQ-NF-05 | Source authority — every fact's authority status (signed_schedule/approved_wording/marketing_summary or equivalent) is resolved before use in a coverage-relevant output | Non-functional | case/INTEGRATED_CASE.md Section 5; INJ-007; INJ-012 | CTRL-DDD-01, CTRL-OSL-01, CTRL-OSL-04 (05/07) | DIM-04 | Documented |
+| REQ-NF-06 | Provenance — every material output cites source path, record locator, hash and authority status | Non-functional | case/INTEGRATED_CASE.md Section 5; DEFINITION_OF_DONE.md "Domain and evidence" | submission/evidence/evidence_manifest.csv (all artefacts) | DIM-04 | Documented |
+| REQ-NF-07 | Structured outputs — outputs separate fact, inference, conflict, missing evidence, recommendation and prohibited action | Non-functional | case/INTEGRATED_CASE.md Section 5; requirements/ARTEFACT_EXPECTATIONS.md | CTRL-PSB-01/02/03 (04_PRODUCT_SERVICE_BLUEPRINT.md) | DIM-07 | Documented |
+| REQ-NF-08 | Abstention — a workflow may decline to answer when evidence, authority or jurisdiction is unresolved, rather than guessing | Non-functional | case/INTEGRATED_CASE.md Section 5 | No existing CTRL-* fully covers this; implied by CTRL-DGL-04 (provisional labelling) | DIM-07 | Documented, not yet controlled |
+| REQ-NF-09 | Human review — every workflow output requires a named human approver before becoming an operational action | Non-functional | case/INTEGRATED_CASE.md Section 5; INJ-005 | CTRL-SDR-01, CTRL-PSB-01/02/03 | DIM-08 (mandatory gate) | Documented |
+| REQ-NF-10 | Contestability — a customer or claimant can challenge the evidence and the rule, not merely the output prose | Non-functional | case/INTEGRATED_CASE.md Section 5; case/STAKEHOLDER_PACK.md (Customer Advocate) | Flagged as an open issue in 04_PRODUCT_SERVICE_BLUEPRINT.md; no CTRL-* yet | DIM-10 | Documented, not yet controlled |
+| REQ-NF-11 | Idempotency — repeated submission of the same workflow request does not produce duplicate side effects | Non-functional | case/INTEGRATED_CASE.md Section 5 | No existing CTRL-* covers this yet | DIM-09 | Documented, not yet controlled |
+| REQ-NF-12 | Bounded steps — every workflow has an explicit maximum step/tool-call count to prevent runaway execution | Non-functional | case/INTEGRATED_CASE.md Section 5 | No existing CTRL-* covers this yet | DIM-13 | Documented, not yet controlled |
+| REQ-NF-13 | Token and cost budgets — every workflow has an explicit token/cost ceiling per request | Non-functional | case/INTEGRATED_CASE.md Section 5 | No existing CTRL-* covers this yet; deferred to 23_TOKEN_FINOPS.md | DIM-13 | Documented, not yet controlled |
+| REQ-NF-14 | Checkpointing — long-running workflow steps can be resumed without repeating completed work | Non-functional | case/INTEGRATED_CASE.md Section 5 | No existing CTRL-* covers this yet | DIM-14 | Documented, not yet controlled |
+| REQ-NF-15 | Rollback — a workflow action can be reversed or its effects undone before human approval is finalised | Non-functional | case/INTEGRATED_CASE.md Section 5 | No existing CTRL-* covers this yet | DIM-14 | Documented, not yet controlled |
+| REQ-NF-16 | Kill switch — any workflow can be immediately disabled by an authorized operator | Non-functional | case/INTEGRATED_CASE.md Section 5; DEFINITION_OF_DONE.md "Manual fallback, model substitution" | Consistent with per-workflow AI-disabled continuity referenced in 04_PRODUCT_SERVICE_BLUEPRINT.md Alternatives table; no CTRL-* ID assigned yet | DIM-14 | Documented, not yet controlled |
+| REQ-NF-17 | Degraded mode — workflows continue operating in a reduced-capability manual-fallback mode when a dependency (e.g., entitlement source, model registry) is unavailable | Non-functional | case/INTEGRATED_CASE.md Section 5; INJ-009 (portal outage); INJ-035 (vendor outage) | Referenced as a design requirement in 06_DATA_GOVERNANCE_LINEAGE.md (Alternatives table) and 03_STAKEHOLDER_DECISION_RIGHTS.md (Alternatives table); no CTRL-* ID assigned yet | DIM-14 | Documented, not yet controlled |
+| REQ-NF-18 | Auditability and AI-disabled continuity — every workflow action is logged to an audit event and the system can run in a fully AI-disabled mode without loss of core capability | Non-functional | case/INTEGRATED_CASE.md Section 5; data/audit_events.csv | Referenced in 14_INSURANCE_CONTROL_BOUNDARIES.md (deferred); no CTRL-* ID assigned yet | DIM-11 | Documented, not yet controlled |
+| REQ-C-01 | Board target not reported as achieved without a dated baseline | Control | INJ-001 | CTRL-BC-01 (01_BUSINESS_CASE.md) | DIM-01 | Documented |
+| REQ-C-02 | No-AI alternative quantified before AI investment approval | Control | INJ-002 | CTRL-BC-02 (01_BUSINESS_CASE.md); CTRL-DMAIC-03 (02_DMAIC_WORKBOOK.md) | DIM-01 | Documented |
+| REQ-C-03 | Value-leakage costs included in every benefits calculation | Control | INJ-006 | CTRL-BC-03 (01_BUSINESS_CASE.md) | DIM-01 | Documented |
+| REQ-C-04 | Mutual-vs-shareholder benefit reporting is entity-segmented | Control | INJ-003 | CTRL-BC-04 (01_BUSINESS_CASE.md); CTRL-SDR-03 (03_STAKEHOLDER_DECISION_RIGHTS.md) | DIM-01 | Documented |
+| REQ-C-05 | No improvement percentage published without a logged baseline | Control | INJ-001 | CTRL-DMAIC-01 (02_DMAIC_WORKBOOK.md) | DIM-01 | Documented |
+| REQ-C-06 | Endorsement-timing defect surfaced as flagged evidence only, never auto-corrected | Control | INJ-008 | CTRL-DMAIC-02 (02_DMAIC_WORKBOOK.md); CTRL-DDD-02 (05_DDD_CONTEXT_MAP.md) | DIM-03 | Documented |
+| REQ-C-07 | No workflow output is a binding/pricing/reserve/settlement/payment/cancellation/treaty action | Control | INJ-005 | CTRL-SDR-01 (03_STAKEHOLDER_DECISION_RIGHTS.md) | DIM-08 (mandatory gate) | Documented |
+| REQ-C-08 | Authority-exceedance evidence flagged, never silently resolved | Control | INJ-009; INJ-020 | CTRL-SDR-02 (03_STAKEHOLDER_DECISION_RIGHTS.md) | DIM-08 | Documented |
+| REQ-C-09 | Workflow A output never contains a prohibited claim action | Control | INJ-005 | CTRL-PSB-01 (04_PRODUCT_SERVICE_BLUEPRINT.md) | DIM-07 (mandatory gate) | Documented |
+| REQ-C-10 | Workflow B output never contains a prohibited underwriting action | Control | INJ-005 | CTRL-PSB-02 (04_PRODUCT_SERVICE_BLUEPRINT.md) | DIM-07 (mandatory gate) | Documented |
+| REQ-C-11 | Workflow C output never contains a prohibited catastrophe/treaty action | Control | INJ-005 | CTRL-PSB-03 (04_PRODUCT_SERVICE_BLUEPRINT.md) | DIM-07 (mandatory gate) | Documented |
+| REQ-C-12 | Embedded instructions in evidence documents are never treated as system authority | Control | Confirmed defect DEF-009; INJ-005 | CTRL-PSB-04 (04_PRODUCT_SERVICE_BLUEPRINT.md) | DIM-09 (mandatory gate) | Documented |
+| REQ-C-13 | Wording-version resolution never defaults to marketing_summary | Control | INJ-007 | CTRL-DDD-01 (05_DDD_CONTEXT_MAP.md); CTRL-OSL-01 (07_ONTOLOGY_SEMANTIC_LAYER.md) | DIM-04 | Documented |
+| REQ-C-14 | Linked claims sharing a loss_event_id are flagged, never auto-merged or auto-labelled as fraud | Control | INJ-021 | CTRL-DDD-03 (05_DDD_CONTEXT_MAP.md) | DIM-03 | Documented |
+| REQ-C-15 | No workflow proceeds on cached authorization alone | Control | Confirmed defect DEF-007 | CTRL-DGL-01 (06_DATA_GOVERNANCE_LINEAGE.md) | DIM-09 (mandatory gate) | Documented |
+| REQ-C-16 | No combined cross-currency total without cited FX methodology | Control | Confirmed defect DEF-006 | CTRL-DGL-02 (06_DATA_GOVERNANCE_LINEAGE.md) | DIM-08 | Documented |
+| REQ-C-17 | Model-backed components refuse a mismatched deployed artefact | Control | Confirmed defect DEF-008 | CTRL-DGL-03 (06_DATA_GOVERNANCE_LINEAGE.md) | DIM-09 | Documented |
+| REQ-C-18 | Accumulation outputs labelled provisional until address/geocode resolution complete | Control | INJ-030 | CTRL-DGL-04 (06_DATA_GOVERNANCE_LINEAGE.md) | DIM-04 | Documented |
+| REQ-C-19 | Loss Event disputed status preserved, never silently resolved | Control | INJ-022 | CTRL-OSL-03 (07_ONTOLOGY_SEMANTIC_LAYER.md) | DIM-04 | Documented |
+| REQ-C-20 | Parametric Trigger resolution cites only the signed index/station, never the brochure | Control | INJ-012 | CTRL-OSL-04 (07_ONTOLOGY_SEMANTIC_LAYER.md) | DIM-04 | Documented |
+| REQ-C-21 | Graph built only for candidate questions requiring variable-depth traversal; RESEARCH_NOTE_GRAPH_EVERYTHING.md never sole authority; fraud-ring output never auto-actioned | Control | INJ-045; INJ-070 | CTRL-KGD-01, CTRL-KGD-02, CTRL-KGD-03, CTRL-KGD-04 (08_KNOWLEDGE_GRAPH_DECISION.md) | DIM-05 | Documented |
+
+## Open issues, residual risk and sign-off
+
+| Issue/risk | Severity | Treatment or acceptance | Accountable owner | Approval/status | Review trigger |
+|---|---|---|---|---|---|
+| 8 of 18 mandatory operating properties (REQ-NF-08, 10, 11, 12, 13, 14, 15, 16, 17, 18) have no assigned CTRL-* control yet — "documented, not yet controlled" | High | Track as design debt; each must receive a control before its owning workflow reaches a user-facing pilot, consistent with non-compensable gates 2, 4 and 6 | AI Product Owner | Open | Before Workflow A/B/C design freeze (deferred to template 10 C4 Architecture) |
+| No implementation exists for any REQ-C-* control (submission/src, submission/tests absent) | High | Consistent with A-03; no requirement may be marked "implemented" until code exists | AI Product Owner | Open | Before templates 26–28 (target operating model, production readiness) |
+| This matrix currently covers only injects addressed in artefacts 01–08 (INJ-001 through INJ-012, INJ-020 through INJ-023, INJ-037, INJ-045, INJ-047, INJ-070); the remaining ~70 injects are tracked in inject_traceability.csv as not-yet-addressed but do not yet have REQ-* IDs | Medium | Extend this matrix incrementally as templates 10–22 are drafted; do not claim full 96-inject requirement coverage until then | AI Product Owner | Open | Before final submission (DEFINITION_OF_DONE.md "all 96 injects...mapped") |
+| The requirement count for Section 5 properties (18) depends on treating two case-pack phrases as compound single requirements (A-01); a stricter reading could yield 19 or 20 distinct requirements | Low | Flag the counting assumption explicitly here so a panel challenge can be answered by pointing to A-01, not by re-deriving the count live | AI Product Owner | Open | If challenged at final defence |

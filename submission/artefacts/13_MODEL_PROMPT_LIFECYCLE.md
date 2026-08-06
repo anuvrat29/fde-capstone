@@ -1,0 +1,85 @@
+# 13 Model Prompt Lifecycle
+
+## Purpose
+
+Model selection, prompt versioning, retrieval scoping, structured-output contracts and substitution/fallback design for the three workflows, grounded in the confirmed model-registry mismatch defect, the model-verification gate placed in template 10, and the knowledge-base authority documents governing safe summarisation, budget limits and AI-disabled continuity.
+
+## Acceptance criteria
+
+- The artefact is evidence-led and references supplied paths, record locators and inject IDs.
+- Facts, assumptions, inference, conflict, decision and residual risk are distinguishable.
+- Temporal, jurisdictional, authorization and authority boundaries are explicit where relevant.
+- Owners, approvals, review triggers and measurable acceptance gates are named.
+- The artefact contains no unsupported coverage, pricing, reserve, payment or treaty conclusion.
+
+## Artefact-specific acceptance criteria
+
+- No model is selected for a workflow without an `approval_status` of `approved` in data/model_registry.csv; a `conditional` status (e.g., GEN-SUM-3) requires the condition to be stated before use (CTRL-MPL-01).
+- Every prompt version cites the knowledge-document ID and version metadata it depends on, per knowledge/GENAI_SAFE_SUMMARISATION.md's citation requirement (CTRL-MPL-02).
+- Every workflow has a stated maximum step/time/token/tool/cost budget with a deterministic stop reason, per knowledge/AGENT_BUDGET_STOP_POLICY.md, closing REQ-NF-12/13 from 09_REQUIREMENTS_TRACEABILITY.md (CTRL-MPL-03).
+- Every workflow has a named manual/deterministic fallback mode usable when model inference is unavailable, per knowledge/AI_DISABLED_CONTINUITY.md, closing REQ-NF-16/17 (CTRL-MPL-04).
+
+## Scope and evidence register
+
+| Evidence ID | Source path and locator | Authority/status | Effective time | Jurisdiction | Use and limitation |
+|---|---|---|---|---|---|
+| EVID-057 | data/model_registry.csv (model_id=PRC-MOTOR-9;FRD-CLAIM-6;GEN-SUM-3) | approved | 2026-01-01 | global | Approved model registry; GEN-SUM-3 shows approval_status=conditional, not unconditional approval — directly relevant to model-selection governance below. |
+| EVID-045 | starter/baseline_diagnostics.py (executed output) | participant-generated diagnostic | 2026-08-06 | n/a | Confirms live model-artefact/registry mismatch defect (GEN-SUM-3 deployed_version 3.2.4-hotfix vs registry hash mismatch), reused from 06/10, directly informs the model-verification gate's placement in this lifecycle. |
+| EVID-059 | knowledge/GENAI_SAFE_SUMMARISATION.md | approved/trusted_with_conditions | 2026-01-01 | global | Requires summaries to distinguish fact/inference/conflict/missing-evidence/prohibited-decision with provenance; controlling standard for the structured-output contract below. |
+| EVID-060 | knowledge/AI_DISABLED_CONTINUITY.md | approved/trusted_with_conditions | 2026-01-01 | global | Requires critical operations to remain safe using controlled manual/deterministic modes when model inference is unavailable; controlling standard for the substitution/fallback design below. |
+| EVID-061 | knowledge/AGENT_BUDGET_STOP_POLICY.md | approved/trusted_with_conditions | 2026-01-01 | global | Requires bounded workflows to have maximum steps/time/token/tool/cost budgets and deterministic stop reasons; controlling standard for the budget table below. |
+| EVID-035 | knowledge/RESEARCH_NOTE_GRAPH_EVERYTHING.md | draft/not_controlling | unknown | global | Reused from 08_KNOWLEDGE_GRAPH_DECISION.md as the worked example of a document that must never be treated as sufficient authority despite its Architecture Review Board provenance — the same discipline applies to any prompt or model-selection research note. |
+
+## Working assumptions and constraints
+
+| ID | Assumption or constraint | Basis | Impact if false | Validation owner | Due/review date |
+|---|---|---|---|---|---|
+| A-01 | GEN-SUM-3's `conditional` approval status (EVID-057) means it may be used for evidence summarisation (its registered purpose) only with the condition explicitly stated in the workflow output, not treated as equivalent to PRC-MOTOR-9/FRD-CLAIM-6's unconditional `approved` status. | data/model_registry.csv | Treating a conditional approval as unconditional would misrepresent the model's governance status to a reviewer, and could mask exactly the kind of gap CTRL-DGL-03 (06_DATA_GOVERNANCE_LINEAGE.md) is designed to catch. | AI Product Owner, Model Risk Owner | Before GEN-SUM-3 is used in any workflow |
+| A-02 | The model-artefact verification gate placed in 10_C4_ARCHITECTURE.md (Component view) is the same gate that must run before every model call in this lifecycle, not a separate or duplicate mechanism; this artefact does not re-specify the gate, only its lifecycle placement (model selection → verification → inference → structured output). | submission/artefacts/10_C4_ARCHITECTURE.md (Component view, model-artefact verification gate) | Duplicating or diverging from the existing gate specification would create two competing definitions of the same control. | AI Product Owner | Ongoing |
+| A-03 | Prompt versioning must be explicit and auditable: every prompt version is tied to the knowledge-document ID(s) and version metadata it was authored against, so a later knowledge-document revision (e.g., a POLICY_WORDING_AUTHORITY.md update) can trigger a prompt-review, not a silent drift. | knowledge/GENAI_SAFE_SUMMARISATION.md (citation requirement, EVID-059) | Without this link, a prompt could continue citing a superseded knowledge-document version without detection. | AI Product Owner | Before any prompt is deployed to a workflow |
+| A-04 | Retrieval scoping for every workflow is limited to the evidence sources named in that workflow's persona/job definition (04_PRODUCT_SERVICE_BLUEPRINT.md); Workflow B's retrieval must not include the fraud-ring graph component, consistent with A-04 in 10_C4_ARCHITECTURE.md. | submission/artefacts/04_PRODUCT_SERVICE_BLUEPRINT.md; submission/artefacts/10_C4_ARCHITECTURE.md (A-04) | Unscoped retrieval could re-introduce the INJ-070 graph-overreach pattern at the retrieval layer even if the graph component itself remains correctly bounded. | AI Product Owner | Before any retrieval-augmented prompt is deployed |
+
+## Required analysis and decisions
+
+| Decision/question | Evidence | Analysis | Decision/output | Owner | Status |
+|---|---|---|---|---|---|
+| Which registered models may each workflow use, and under what approval condition? | data/model_registry.csv (EVID-057) | PRC-MOTOR-9 (motor pricing support, high risk tier, approved) is scoped to Workflow B pricing-adjacent evidence preparation only, never an autonomous pricing decision (per REQ-F-02); FRD-CLAIM-6 (claim fraud referral, high risk tier, approved) is scoped to Workflow A fraud-evidence preparation only, feeding but not replacing the fraud-ring graph component's human-routed output; GEN-SUM-3 (evidence summarisation, medium risk tier, conditional) is scoped to cross-workflow summarisation subject to A-01's condition-disclosure requirement | Three models mapped to workflows with explicit risk-tier and approval-status disclosure; no model is used outside its registered purpose | AI Product Owner, Model Risk Owner | Decided |
+| How must structured output separate fact/inference/conflict/missing-evidence/prohibited-decision, per knowledge/GENAI_SAFE_SUMMARISATION.md? | knowledge/GENAI_SAFE_SUMMARISATION.md (EVID-059); REQ-NF-07 (09_REQUIREMENTS_TRACEABILITY.md) | The output schema already required by CTRL-PSB-01/02/03 (04_PRODUCT_SERVICE_BLUEPRINT.md) must additionally carry a per-statement provenance citation (document ID + version + evidence hash), not only a workflow-level citation | Every material output statement carries its own provenance tag; this closes REQ-NF-06/07 at the prompt-output level rather than only the workflow level | AI Product Owner | Decided — schema requirement recorded, implementation deferred |
+| What are the bounded-step, time, token, tool and cost budgets per workflow, per knowledge/AGENT_BUDGET_STOP_POLICY.md? | knowledge/AGENT_BUDGET_STOP_POLICY.md (EVID-061); REQ-NF-12/13 (09_REQUIREMENTS_TRACEABILITY.md, previously uncontrolled) | Each workflow must have a deterministic stop reason (e.g., "max steps reached", "budget exhausted", "abstention triggered") rather than an open-ended run; the fraud-ring graph component's bounded-traversal-depth flag (12_INTEGRATION_CONTRACTS.md) is one concrete instance of this budget applied to a sub-component | Numeric budget values deferred to implementation, but the requirement and stop-reason taxonomy are recorded here for the first time, closing REQ-NF-12/13's "no home" status from Step 10/11 | AI Product Owner | Decided — taxonomy recorded, numeric values deferred |
+| What is the substitution/fallback design when a model or its registry entry is unavailable or mismatched, per knowledge/AI_DISABLED_CONTINUITY.md? | knowledge/AI_DISABLED_CONTINUITY.md (EVID-060); CTRL-DGL-03 (06_DATA_GOVERNANCE_LINEAGE.md) | On model-verification-gate failure (mismatch or unavailability), each workflow falls back to its AI-disabled continuity mode (already established as a per-workflow property in 04_PRODUCT_SERVICE_BLUEPRINT.md's Alternatives table) — a controlled manual/deterministic mode, never a best-effort substitute model chosen without governance review | Fallback is "disable and route to manual process", never "silently substitute an unapproved model" | AI Product Owner, Model Risk Owner | Decided |
+
+## Alternatives and trade-offs
+
+| Option | Benefits | Risks | Cost/complexity | Reversibility | Decision and rationale |
+|---|---|---|---|---|---|
+| Allow any workflow to call any registered model opportunistically for best output quality, regardless of the model's registered purpose | Potentially higher output quality by using the "best" model per query | Breaks the risk-tier/purpose scoping already established in data/model_registry.csv; a fraud-referral model (FRD-CLAIM-6) used for pricing, or vice versa, would operate outside its approved risk assessment | Lower governance overhead, higher undocumented-risk exposure | Reversible, but any output produced during misuse cannot be retroactively re-governed | Rejected. Contradicts the model-registry's explicit purpose field and the risk-tiered approval discipline it encodes. |
+| Treat GEN-SUM-3's `conditional` approval as equivalent to full approval to simplify workflow logic | Simpler implementation (no condition-disclosure branch needed) | Misrepresents the model's actual governance status; could mask the same class of gap the model-artefact verification gate (10_C4_ARCHITECTURE.md) is designed to catch | Lower implementation cost | Reversible, but the condition can never be retroactively disclosed for outputs already produced | Rejected. A-01 requires the condition to be explicitly carried into any output using GEN-SUM-3. |
+| On model unavailability or mismatch, automatically substitute the next-best available model without a governance review | Minimises downtime, keeps the workflow "running" | Directly contradicts knowledge/AI_DISABLED_CONTINUITY.md's controlled-manual-mode requirement; an unreviewed substitute model could have a different risk profile entirely | Lower operational friction, higher governance risk | Reversible in principle, but any output produced under an ungoverned substitute cannot be retroactively validated | Rejected. Selected fallback is "disable and route to manual", not silent substitution, consistent with CTRL-DGL-03's refuse-and-escalate pattern. |
+| Per-workflow model scoping (as decided above), with explicit risk-tier/approval-status disclosure, a shared structured-output schema, an explicit budget taxonomy, and a controlled-manual-mode fallback | Directly satisfies all four artefact-specific acceptance criteria; reuses existing governance artefacts (model registry, knowledge authority documents) rather than inventing new ones | Requires per-workflow configuration discipline to keep model scoping from drifting over time | Medium | Fully reversible per workflow | Selected. Matches every controlling knowledge document (GENAI_SAFE_SUMMARISATION, AGENT_BUDGET_STOP_POLICY, AI_DISABLED_CONTINUITY) without introducing a new, uncited design principle. |
+
+## Controls, tests and acceptance
+
+| Control/test ID | Risk or requirement | Method | Pass criterion | Evidence location | Owner |
+|---|---|---|---|---|---|
+| CTRL-MPL-01 | No model is used outside its registered purpose or without disclosing a conditional approval status | Design review of each workflow's model-selection logic against data/model_registry.csv | Every model call cites model_id, purpose, approval_status; any `conditional` status is disclosed in the output | This artefact, Required analysis and decisions table | Model Risk Owner |
+| CTRL-MPL-02 | Every prompt version cites the knowledge-document ID and version metadata it depends on | Review of prompt-version records against knowledge/GENAI_SAFE_SUMMARISATION.md's citation requirement | No prompt version lacks a knowledge-document citation | submission/src (deferred — no prompt files exist yet) | AI Product Owner |
+| CTRL-MPL-03 | Every workflow has a stated maximum step/time/token/tool/cost budget with a deterministic stop reason | Review of each workflow's budget specification against knowledge/AGENT_BUDGET_STOP_POLICY.md | Every workflow names at least one budget dimension and one stop reason | This artefact, Required analysis and decisions table | AI Product Owner |
+| CTRL-MPL-04 | Every workflow has a named manual/deterministic fallback mode | Review of each workflow's substitution/fallback design against knowledge/AI_DISABLED_CONTINUITY.md | Every workflow's fallback is "disable and route to manual", never silent model substitution | This artefact, Required analysis and decisions table | Model Risk Owner |
+
+## Traceability
+
+| Inject/requirement | Architecture/ADR | Implementation component | Test/evaluation | Residual risk |
+|---|---|---|---|---|
+| Confirmed defect DEF-008 (model artefact/registry mismatch) | ADR-09 (11_ADR_REGISTER.md); Component view (10_C4_ARCHITECTURE.md) | Model-artefact verification gate (referenced, not re-specified, per A-02) | CTRL-DGL-03 (deferred) | This artefact adds lifecycle placement but does not change the gate's implementation status — still not built. |
+| REQ-NF-12, REQ-NF-13 (bounded steps, token/cost budgets) | Newly given a taxonomy home in this artefact (previously "documented, not yet controlled" per 09_REQUIREMENTS_TRACEABILITY.md Step 10) | Budget/stop-reason enforcement logic (not yet implemented) | CTRL-MPL-03 (deferred) | Numeric budget values still not set; taxonomy alone does not enforce a limit. |
+| REQ-NF-16, REQ-NF-17 (kill switch, degraded mode) | Newly given a fallback-design home in this artefact | AI-disabled continuity fallback per workflow (not yet implemented) | CTRL-MPL-04 (deferred) | Fallback design is specified but the actual manual-mode procedures are not yet documented per workflow. |
+| INJ-070 (graph overreach) | Reused discipline from ADR-11 (11_ADR_REGISTER.md) applied to prompt/model research notes generally | N/A — governance principle | N/A | If a future prompt-engineering research note argues for an ungoverned prompt pattern, the same non-controlling-draft discipline must be re-applied. |
+
+## Open issues, residual risk and sign-off
+
+| Issue/risk | Severity | Treatment or acceptance | Accountable owner | Approval/status | Review trigger |
+|---|---|---|---|---|---|
+| No actual prompt text, prompt-version registry, or retrieval-scoping implementation exists yet; this artefact specifies the governance requirements only | High | Track alongside the "no implementation code" gap already logged in ARTEFACT_STATE_LOG.md | AI Product Owner | Open | Before templates 26–28 (target operating model, production readiness) |
+| Numeric budget values (max steps, time, tokens, tool calls, cost ceiling) for each workflow are not yet set | Medium | Defer numeric-value setting to template 23 (Token/FinOps) with input from Group Chief Claims Officer and Finance on acceptable per-query cost/latency | AI Product Owner | Open | Before template 23 is drafted |
+| GEN-SUM-3's `conditional` approval basis (what the condition actually is) is not detailed in the supplied data/model_registry.csv row beyond the status field itself | Medium | Escalate to Model Risk Owner to obtain the actual condition text before GEN-SUM-3 is used in any workflow | Model Risk Owner | Open | Before GEN-SUM-3 is connected to any workflow |
+| This artefact does not yet specify per-workflow manual-mode operating procedures in detail (only that a fallback must exist) | Medium | Defer detailed manual-mode procedure design to template 25 (Incident and Recovery) | AI Product Owner | Open | Before template 25 is drafted |
