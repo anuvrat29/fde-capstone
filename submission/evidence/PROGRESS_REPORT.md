@@ -1,8 +1,8 @@
 ```
 AEGIS-INSURE submission progress report
-Generated: 2026-08-06T06:44:13.941199+00:00
+Generated: 2026-08-06T07:31:45.657062+00:00
 
-## Artefact templates (29/32 complete, 0 placeholder, 3 missing)
+## Artefact templates (32/32 complete, 0 placeholder, 0 missing)
   [complete  ] 01_BUSINESS_CASE.md
   [complete  ] 02_DMAIC_WORKBOOK.md
   [complete  ] 03_STAKEHOLDER_DECISION_RIGHTS.md
@@ -32,23 +32,21 @@ Generated: 2026-08-06T06:44:13.941199+00:00
   [complete  ] 27_VENDOR_EXIT_RETIREMENT.md
   [complete  ] 28_PRODUCTION_READINESS.md
   [complete  ] 29_NINETY_DAY_ROADMAP_HANDOVER.md
-  [missing   ] 30_FINAL_DEFENCE.md
-  [missing   ] 31_ELEVATOR_PITCH.md
-  [missing   ] 32_CHANGE_AND_BENEFITS_CONTROL.md
+  [complete  ] 30_FINAL_DEFENCE.md
+  [complete  ] 31_ELEVATOR_PITCH.md
+  [complete  ] 32_CHANGE_AND_BENEFITS_CONTROL.md
 
 ## Phase 1 evidence files
   [complete  ] 01_PROJECT_CHARTER.md
   [complete  ] 02_STAKEHOLDER_AND_DECISION_RIGHTS.md
 
 ## Inject traceability (96 total)
-  addressed: 22
-  partially-addressed: 33
-  not-yet-addressed: 11
-  missing: 30
-  not tracked at all: INJ-024,INJ-029,INJ-030,INJ-031,INJ-032,INJ-033,INJ-034,INJ-038,INJ-040,INJ-041,INJ-042,INJ-044,INJ-046,INJ-049,INJ-050,INJ-054,INJ-056,INJ-058,INJ-065,INJ-066,INJ-068,INJ-069,INJ-073,INJ-074,INJ-076,INJ-081,INJ-082,INJ-084,INJ-086,INJ-095
+  addressed: 26
+  partially-addressed: 38
+  not-yet-addressed: 32
 
 ## Evidence manifest
-  rows: 122
+  rows: 168
 
 ## Implementation and test evidence (final-mode thresholds in parentheses)
   src/app substantive files: 0 (>=3)
@@ -64,5 +62,5 @@ Generated: 2026-08-06T06:44:13.941199+00:00
   [complete          ] runbooks/RESET.md
   [complete          ] runbooks/INCIDENT_AND_FALLBACK.md
 
-## Overall: 31/34 tracked markdown artefacts complete
+## Overall: 34/34 tracked markdown artefacts complete
 ```

@@ -29,6 +29,7 @@ Golden, edge, adversarial, fairness, reliability and cost tests with release gat
 | EVID-068 | data/fairness_metrics.csv | domain_specific/model_governance | 2026-08-06 | MULTI | Reused from 15/18; confirmed subgroup breaches directly inform the fairness test family's expected result (a genuine failing test, not a passing placeholder). |
 | EVID-105 | data/candidate_outputs.csv (record_id=INJ-083-CANDIDATE_OUTPUTS) | mixed/as_supplied | 2026-08-01T06:00:00Z | MULTI | Claims automation bias (INJ-083); direct evidence for the fairness/bias test family. |
 | EVID-073 | knowledge/MALICIOUS_ADJUSTER_REPORT.md | untrusted/not_controlling | unknown | global | Reused from 16; direct fixture content for EV-03 (Malicious adjuster report, INJ-077), the adversarial test family's primary case. |
+| EVID-108 | data/evaluations.csv | mixed/as_supplied | 2026-08-01T06:00:00Z | MULTI | Evidence-envelope schema only, no inject-specific challenge_fact row present; reviewed as generic evaluation-adjacent evidence and found to add no further test-family detail beyond what EVID-102/103/104 already supply. |
 
 ## Working assumptions and constraints
 

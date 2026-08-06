@@ -34,6 +34,7 @@ Entity/product/workflow applicability across insurance, AI, privacy, resilience 
 | EVID-096 | sources/07_DORA.md (SRC-07) | official/research_anchor | 2026-08-01 | EU | Digital Operational Resilience Regulation; applies to EU financial entities and ICT dependencies, cross-referenced to vendor-outage resilience (INJ-035). |
 | EVID-097 | sources/08_SOLVENCY_II.md (SRC-08) | official/research_anchor | 2026-08-01 | EU | Solvency II capital/reserving governance; relevant to reserve model drift (INJ-055) for AMR's EU-regulated entities. |
 | EVID-041 | case/SOURCE_SYSTEM_FACT_PACK.md | approved/case-pack | 2026-08-01 | MULTI | Reused from 06/10/12/17; confirms AMR operates PolicyCore-IN (India), among other jurisdiction-specific systems, directly scoping which sources apply to which entity. |
+| EVID-099 | sources/OFFLINE_REGULATORY_AND_STANDARDS_GUIDE.md | approved/case-pack | 2026-08-01 | global | Offline guide consolidating all nine regulatory/standards source anchors (SRC-01 through SRC-09) for workshop use without live internet access; used to confirm the offline availability of every source cited in this artefact's applicability matrix. |
 
 ## Working assumptions and constraints
 
