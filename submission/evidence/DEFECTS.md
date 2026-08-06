@@ -8,7 +8,7 @@ Records every defect, anomaly or contradiction discovered while executing prefli
 
 | ID | Defect | How found | Evidence | Status | Resolution |
 |---|---|---|---|---|---|
-| DEF-001 | `tools/verify_package.py` "immutable file hashes" check failed with `app/data.js` mismatch | Ran `python tools/verify_package.py` directly; FAIL detail named `app/data.js` | FILE_HASHES.csv line for app/data.js; tools/build_explorer.py regenerates app/data.js on every preflight run, but tools/generate_file_hashes.py's exclusion list (`submission/`, `FILE_HASHES.csv`, `VALIDATION_REPORT.json`) does not exclude the build artefact | Resolved | Re-ran `python tools/generate_file_hashes.py` after `build_explorer.py` to resync the hash ledger; re-ran `verify_package.py` → PASS. Noted as a recurring maintenance step: any future `data/injects.json` change requires re-running `generate_file_hashes.py`. |
+| DEF-001 | `tools/verify_package.py` "immutable file hashes" check failed with `app/data.js` mismatch | Ran `python tools/verify_package.py` directly; FAIL detail named `app/data.js` | FILE_HASHES.csv line for app/data.js; `tools/build_explorer.py` regenerates app/data.js on every preflight run, but `tools/generate_file_hashes.py`'s exclusion list (`submission/`, `FILE_HASHES.csv`, `VALIDATION_REPORT.json`) does not exclude the build artefact | Resolved | Re-ran `python tools/generate_file_hashes.py` after `tools/build_explorer.py` to resync the hash ledger; re-ran `tools/verify_package.py` → PASS. Noted as a recurring maintenance step: any future `data/injects.json` change requires re-running `tools/generate_file_hashes.py`. |
 
 ## Brownfield/data defects (confirmed by direct execution or inspection, beyond the 4 seeded findings)
 

@@ -54,4 +54,4 @@ See [inject_traceability.csv](inject_traceability.csv) for the per-inject status
 
 ## Snapshot limitation
 
-This is a point-in-time reading of the case documents as they existed at [FILE_HASHES.csv](../../FILE_HASHES.csv)'s current immutable state (381 files hashed, `verify_package.py` PASS at time of drafting — see [PREFLIGHT.md](PREFLIGHT.md)). If challenge evidence is later regenerated or the package is reset, this snapshot must be re-validated before reuse.
+This is a point-in-time reading of the case documents as they existed at [FILE_HASHES.csv](../../FILE_HASHES.csv)'s current immutable state (381 files hashed, `tools/verify_package.py` PASS at time of drafting — see [PREFLIGHT.md](PREFLIGHT.md)). If challenge evidence is later regenerated or the package is reset, this snapshot must be re-validated before reuse.

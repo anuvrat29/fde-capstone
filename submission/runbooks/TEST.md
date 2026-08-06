@@ -25,7 +25,7 @@ One-command procedure to execute unit, integration, security and recovery tests 
 
 ## Current submission state
 
-`submission/tests/` currently contains no substantive test files beyond a `.gitkeep` placeholder. `tools/check_submission.py --mode final` requires at least five substantive test files before final validation passes. This is tracked as an open item.
+`submission/tests/` contains substantive test files for Workflow A covering contract validation, evidence resolution/integrity, the reconciliation engine (including prompt-injection resistance, stale-authorization denial and cross-tenant-leakage denial), the human-approval gate and the `submission/scripts/run_workflow_a.py` launcher script. It also contains substantive test files for Workflow B covering the underwriting/pricing engine (fairness-breach escalation, conditional-model-approval surfacing, firmware-drift abstention, life-contestability escalation, vendor price-shock disclosure), the human-approval gate and the `submission/scripts/run_workflow_b.py` launcher script. Workflow C has no tests yet; this is tracked as an open item in `submission/evidence/ARTEFACT_STATE_LOG.md`.
 
 ## Verification
 

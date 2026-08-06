@@ -1,6 +1,6 @@
 ```
 AEGIS-INSURE submission progress report
-Generated: 2026-08-06T07:31:45.657062+00:00
+Generated: 2026-08-06T08:07:33.155324+00:00
 
 ## Artefact templates (32/32 complete, 0 placeholder, 0 missing)
   [complete  ] 01_BUSINESS_CASE.md
@@ -49,9 +49,9 @@ Generated: 2026-08-06T07:31:45.657062+00:00
   rows: 168
 
 ## Implementation and test evidence (final-mode thresholds in parentheses)
-  src/app substantive files: 0 (>=3)
-  test substantive files: 0 (>=5)
-  one-command scripts: 0 (>=5)
+  src/app substantive files: 8 (>=3)
+  test substantive files: 10 (>=5)
+  one-command scripts: 1 (>=5)
   public fixture results rows: file not found (18 expected)
 
 ## Required runbooks
