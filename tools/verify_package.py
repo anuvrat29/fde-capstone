@@ -99,7 +99,9 @@ for p in tmpl:
 add('32 structured templates',len(tmpl)==32 and not terr,','.join(terr))
 # Internal path references; participant-output paths and wildcards are intentionally unresolved at scaffold stage
 referr=[]; known=[ROOT,ROOT/'data',ROOT/'knowledge',ROOT/'starter',ROOT/'starter/api_samples',ROOT/'evaluation',ROOT/'requirements',ROOT/'runbooks',ROOT/'sources',ROOT/'metadata']
+_excluded_dirs={'.venv','venv','__pycache__','.git','node_modules'}
 for mp in ROOT.rglob('*.md'):
+    if _excluded_dirs & set(mp.relative_to(ROOT).parts): continue
     tx=mp.read_text(encoding='utf-8')
     for m in re.finditer(r'`([^`\n]+)`',tx):
         s=m.group(1).strip()
@@ -124,7 +126,7 @@ if hashfile.exists():
     for r in rows:
         p=ROOT/r['path']
         if not p.exists() or h(p)!=r['sha256'] or str(p.stat().st_size)!=r['bytes']: hash_err.append(r['path'])
-    expected={str(p.relative_to(ROOT)).replace('\\','/') for p in ROOT.rglob('*') if p.is_file() and not str(p.relative_to(ROOT)).replace('\\','/').startswith('submission/') and p.name not in {'FILE_HASHES.csv','VALIDATION_REPORT.json'} and '__pycache__' not in p.parts}
+    expected={str(p.relative_to(ROOT)).replace('\\','/') for p in ROOT.rglob('*') if p.is_file() and not str(p.relative_to(ROOT)).replace('\\','/').startswith(('submission/','.venv/')) and p.name not in {'FILE_HASHES.csv','VALIDATION_REPORT.json'} and '__pycache__' not in p.parts}
     listed={r['path'] for r in rows}
     if expected!=listed: hash_err.append('coverage mismatch')
 add('immutable file hashes',not hash_err,','.join(hash_err[:20]))
@@ -132,7 +134,7 @@ add('immutable file hashes',not hash_err,','.join(hash_err[:20]))
 app=(ROOT/'app/app.js').read_text(encoding='utf-8')
 add('explorer avoids HTML interpolation','innerHTML' not in app and 'insertAdjacentHTML' not in app)
 # No runtime caches
-cache=[str(p.relative_to(ROOT)) for p in ROOT.rglob('*') if p.name=='__pycache__' or p.suffix=='.pyc']
+cache=[str(p.relative_to(ROOT)) for p in ROOT.rglob('*') if (p.name=='__pycache__' or p.suffix=='.pyc') and '.venv' not in p.parts]
 add('no runtime caches',not cache,','.join(cache))
 report={'package':'Project AEGIS-INSURE Workshop Ready v2','generated_at':'deterministic-preflight','summary':{'injects':len(injects),'data_csv':len(csvs),'knowledge_documents':len(kn),'templates':len(list((ROOT/'templates').glob('*.md'))),'public_fixtures':len(sc),'checks':len(checks),'failures':len(errors)},'checks':checks}
 (ROOT/'VALIDATION_REPORT.json').write_text(json.dumps(report,indent=2),encoding='utf-8')

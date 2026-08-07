@@ -1,0 +1,125 @@
+/* AEGIS-INSURE Taipy app — custom styling.
+   Purely cosmetic, offline, no external font/asset fetches. */
+
+.aegis-title {
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.aegis-subtitle {
+  opacity: .75;
+  font-size: .92rem;
+  margin-bottom: 1.2rem;
+}
+
+.aegis-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+}
+
+.aegis-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: .95rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  opacity: .85;
+}
+
+.aegis-card-facts   { border-left: 4px solid #5eb0ff; }
+.aegis-card-inferences { border-left: 4px solid #b48ead; }
+.aegis-card-conflicts { border-left: 4px solid #ff6b6b; }
+.aegis-card-missing { border-left: 4px solid #ffb454; }
+.aegis-card-recommendations { border-left: 4px solid #7ee0c1; }
+.aegis-card-prohibited { border-left: 4px solid #6c7a96; }
+
+.aegis-empty {
+  opacity: .55;
+  font-style: italic;
+}
+
+.aegis-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.aegis-badge-supported { background: #1c3a2c; color: #7ee0c1; }
+.aegis-badge-conflict { background: #3a2a12; color: #ffb454; }
+.aegis-badge-escalated { background: #3a1414; color: #ff6b6b; }
+.aegis-badge-insufficient_evidence { background: #26355c; color: #93a2c9; }
+
+.aegis-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.aegis-pill-yes { background: #3a1414; color: #ff6b6b; }
+.aegis-pill-no  { background: #1c3a2c; color: #7ee0c1; }
+
+.aegis-contract-pass { color: #7ee0c1; font-weight: 600; }
+.aegis-contract-fail { color: #ff6b6b; font-weight: 600; }
+
+.aegis-result-strip {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 10px 0 18px;
+}
+
+.aegis-summary {
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 10px 0 18px;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.aegis-summary h4 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.aegis-summary-ok {
+  background: rgba(126,224,193,.08);
+  border-color: rgba(126,224,193,.35);
+}
+
+.aegis-summary-warn {
+  background: rgba(255,180,84,.08);
+  border-color: rgba(255,180,84,.35);
+}
+
+.aegis-summary-danger {
+  background: rgba(255,107,107,.08);
+  border-color: rgba(255,107,107,.35);
+}
+
+.aegis-summary-info {
+  background: rgba(94,176,255,.08);
+  border-color: rgba(94,176,255,.35);
+}
+
+.aegis-source-note {
+  display: block;
+  margin-top: 10px;
+  font-size: .78rem;
+  opacity: .65;
+}
+
+.aegis-json-toggle summary {
+  cursor: pointer;
+  opacity: .8;
+  font-size: .85rem;
+}
