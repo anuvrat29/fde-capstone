@@ -30,7 +30,15 @@ Defines manual fallback, kill switch, degraded mode and AI-disabled continuity p
 
 ## Current submission state
 
-No kill switch, degraded-mode flag or idempotency-key implementation exists yet under `submission/src/`. This runbook documents the required procedure and trigger conditions; implementation and a corresponding test (simulating INJ-093/INJ-080/INJ-094) are tracked as open items in `submission/evidence/ARTEFACT_STATE_LOG.md`.
+Workflow engines under `submission/src/` are deterministic and offline; they do
+not call external models. The only optional model path is the Taipy UI
+summariser (`submission/app_taipy/llm_summary.py`): when `CLAUDE_KEY` is absent
+or the call fails, `summarize_with_fallback()` keeps serving deterministic
+template text (`AI_DISABLED_CONTINUITY`) without changing engine facts. Kill the
+UI by stopping the Taipy process (`run_taipy.py`); CLI workflows remain available
+independently. Dedicated degraded-mode / idempotency drills remain tracked in
+`submission/evidence/ARTEFACT_STATE_LOG.md` and gate 6 of
+`submission/evaluation/release_gates.md`.
 
 ## Verification
 

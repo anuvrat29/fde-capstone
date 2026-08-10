@@ -2,7 +2,9 @@
 
 ## Purpose
 
-One-command procedure to remove participant-generated state (caches, checkpoints, logs, outputs) without changing any supplied challenge evidence, per `runbooks/RESET_AND_REPRODUCE.md`.
+One-command procedure to remove participant-generated runtime state (caches,
+checkpoints, logs, orphan experiment folders) without changing any supplied
+challenge evidence, per `runbooks/RESET_AND_REPRODUCE.md`.
 
 ## Prerequisites
 
@@ -10,31 +12,33 @@ One-command procedure to remove participant-generated state (caches, checkpoints
 
 ## Steps
 
-1. Remove generated runtime artefacts (adjust paths as implementation adds them; never delete supplied challenge evidence outside `submission/`):
+1. Clear submission runtime artefacts:
    ```bash
    python submission/scripts/reset_submission.py
    ```
-   Until that script exists, reset manually with:
-   ```bash
-   Remove-Item -Recurse -Force submission/evidence/submission_hashes.csv -ErrorAction SilentlyContinue
-   Get-ChildItem -Recurse submission -Include *.cache,*.log,__pycache__ | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
-   ```
+   This removes `__pycache__`, `*.cache` / `*.log` / `*.pyc` under `submission/`,
+   generated `submission/evidence/submission_hashes.csv` if present, and any
+   leftover `submission/web` (Node/npm) or `submission/api` experiment trees.
+   Source, artefacts, evidence markdown, tests and evaluation results are kept.
 
 2. Re-verify package integrity after reset:
    ```bash
-   python run_capstone.py
-   python tools/check_submission.py --mode scaffold
+   python submission/scripts/run_setup.py
    ```
 
-3. Confirm no file outside `submission/` was modified by comparing against `FILE_HASHES.csv`:
+3. Confirm no file outside `submission/` was modified:
    ```bash
    python tools/verify_package.py
    ```
 
 ## Current submission state
 
-No caches, checkpoints or runtime logs exist yet because no implementation has been built. `submission/scripts/reset_submission.py` does not exist yet; this is tracked as an open item and the manual PowerShell fallback above is the current procedure.
+`submission/scripts/reset_submission.py` is the supported reset path. The live
+stack is Python engines + Taipy; Node leftovers are treated as disposable
+runtime orphans if they reappear.
 
 ## Verification
 
-Reset is complete when `tools/verify_package.py` reports `PASS` for all checks, confirming no challenge evidence was altered, and `submission/` contains no generated artefacts other than the participant's committed source, tests, artefacts and evidence files.
+Reset is complete when `tools/verify_package.py` reports `PASS` and
+`submission/` contains no `__pycache__`, `node_modules`, or orphan `web`/`api`
+trees.

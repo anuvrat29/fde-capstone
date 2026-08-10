@@ -12,8 +12,14 @@ One-command procedure to execute unit, integration, security and recovery tests 
 
 1. Run the full participant-authored test suite (standard library `unittest`, no external test framework required):
    ```bash
+   python submission/scripts/run_tests.py
+   ```
+   Equivalent direct form:
+   ```bash
    python -m unittest discover -s submission/tests -p "test_*.py" -v
    ```
+   Tests cover the Python engines and CLI launchers. There is no Node.js/React
+   test surface in this submission.
 
 2. Required test categories, per `runbooks/EVIDENCE_AND_SUBMISSION_STANDARD.md` and `requirements/ARTEFACT_EXPECTATIONS.md`:
    - Unit tests for evidence-reconciliation logic (Workflow A), underwriting/pricing evidence assembly (Workflow B) and catastrophe/reinsurance option generation (Workflow C).

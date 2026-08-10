@@ -2,44 +2,64 @@
 
 ## Purpose
 
-One-command procedure to run the three mandatory AEGIS-INSURE workflows (coverage/claim evidence reconciliation, underwriting/pricing decision support, catastrophe/reinsurance planning support) against the offline evaluation fixtures.
+One-command procedures to run the three mandatory AEGIS-INSURE workflows
+(coverage/claim evidence reconciliation, underwriting/pricing decision support,
+catastrophe/reinsurance planning support) against the offline evaluation
+fixtures — via CLI or the Taipy UI. No Node.js frontend is used.
 
 ## Prerequisites
 
 - Setup runbook (`submission/runbooks/SETUP.md`) completed successfully.
+- For the interactive UI: `taipy` installed (see SETUP).
 
 ## Steps
 
-1. Launch the offline evidence explorer (read-only case/data browser, no workflow execution):
+1. (Optional) Launch the supplied offline evidence explorer (read-only case/data
+   browser under package-root `app/`, not the workflow runner):
    ```bash
    python -m http.server --directory app 8000
    ```
-   then open `http://localhost:8000/index.html`, or open `app/index.html` directly in a browser.
+   then open `http://localhost:8000/index.html`, or open `app/index.html` directly.
 
-2. Run Workflow A (coverage/claim/fraud evidence reconciliation) against any public fixture:
+2. **Interactive UI (Taipy — preferred demo path)**  
+   ```bash
+   python submission/scripts/run_taipy.py
+   ```
+   Open `http://127.0.0.1:5000`, choose a workflow and public fixture, then Run.
+   The UI calls `submission/src/workflow_{a,b,c}/engine.py` in-process, validates
+   the response against the fixture's JSON Schema contract, and optionally
+   paraphrases the summary via GEN-SUM-3 when `CLAUDE_KEY` is configured.
+
+3. **CLI (headless / CI)** — Workflow A:
    ```bash
    python submission/scripts/run_workflow_a.py --fixture evaluation/fixtures/EV-01/fixture.json
    ```
-   Add `--out <path>` to write the JSON response to a file instead of stdout. The script exits 0 only if the produced response also passes its own `evaluation/contracts/coverage_claim_reconciliation_response.schema.json` contract check; otherwise it fails closed (exit 1) and prints the validation errors.
+   Add `--out <path>` to write JSON to a file. Exit 0 only if the response passes
+   `evaluation/contracts/coverage_claim_reconciliation_response.schema.json`.
 
-   Run Workflow B (underwriting and pricing decision support) the same way:
+   Workflow B:
    ```bash
    python submission/scripts/run_workflow_b.py --fixture evaluation/fixtures/EV-06/fixture.json
    ```
-   It validates against `evaluation/contracts/underwriting_pricing_support_response.schema.json` and fails closed the same way.
+   Contract: `evaluation/contracts/underwriting_pricing_support_response.schema.json`.
 
-   Run Workflow C (catastrophe and reinsurance planning support) the same way:
+   Workflow C:
    ```bash
    python submission/scripts/run_workflow_c.py --fixture evaluation/fixtures/EV-10/fixture.json
    ```
-   It validates against `evaluation/contracts/catastrophe_reinsurance_planning_response.schema.json` and fails closed the same way.
+   Contract: `evaluation/contracts/catastrophe_reinsurance_planning_response.schema.json`.
 
-3. Every workflow run must emit a structured output separating fact, inference, conflict, missing evidence, recommendation and prohibited action (never a bound/priced/reserved/settled/paid/cancelled/repudiated/treaty conclusion — see `submission/evidence/01_project_charter.md` and `submission/evidence/02_STAKEHOLDER_AND_DECISION_RIGHTS.md`). Workflow A's engine (`submission/src/workflow_a/engine.py`), Workflow B's engine (`submission/src/workflow_b/engine.py`) and Workflow C's engine (`submission/src/workflow_c/engine.py`) enforce this by construction: none has a code path that can populate any field in its contract's `x-prohibited-fields` list.
+4. Every workflow run must emit structured output separating fact, inference,
+   conflict, missing evidence, recommendation and prohibited action. Engines
+   enforce this by construction and never populate `x-prohibited-fields`.
 
 ## Current submission state
 
-All three mandatory workflows are implemented end-to-end: Workflow A (`submission/src/workflow_a/`, launcher `submission/scripts/run_workflow_a.py`, validated against all 9 public `coverage_claim_reconciliation` fixtures), Workflow B (`submission/src/workflow_b/`, launcher `submission/scripts/run_workflow_b.py`, validated against all 4 public `underwriting_pricing_support` fixtures), and Workflow C (`submission/src/workflow_c/`, launcher `submission/scripts/run_workflow_c.py`, validated against all 5 public `catastrophe_reinsurance_planning` fixtures).
+All three mandatory workflows are implemented end-to-end. Presentation is
+Taipy-only (`submission/app_taipy/`). There is no React/Vite/Node SPA and no
+FastAPI companion service in this submission.
 
 ## Verification
 
-A run is successful when the command exits 0 and produces a structured output file under `submission/evidence/` or `submission/evaluation/` that a reviewer can inspect without oral explanation.
+A run is successful when the CLI exits 0 with a contract-valid JSON response, or
+the Taipy UI shows status + contract PASS for the selected fixture.

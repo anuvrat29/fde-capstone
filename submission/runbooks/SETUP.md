@@ -2,32 +2,51 @@
 
 ## Purpose
 
-One-command environment setup for the AEGIS-INSURE participant submission. This runbook covers the offline, dependency-light setup path only; no cloud keys, paid APIs or external datasets are required or permitted.
+One-command environment setup for the AEGIS-INSURE participant submission. The
+stack is **Python-only**: rule engines under `submission/src/`, CLI launchers
+under `submission/scripts/`, and an optional **Taipy** UI under
+`submission/app_taipy/`. Node.js, npm, Vite and React are not part of this
+submission and must not be introduced.
 
 ## Prerequisites
 
-- Python 3.10 or later (standard library only; see PACKAGE_SCOPE_AND_ASSUMPTIONS.md).
+- Python 3.10 or later.
 - Repository cloned or extracted with `FILE_HASHES.csv` intact and unmodified outside `submission/`.
+- Optional UI: `taipy` installed in the local environment (`pip install taipy` or equivalent).
+- Optional LLM paraphrase in the UI: `anthropic` plus `CLAUDE_KEY` in the repo-root `.env` (never commit secrets).
 
 ## Steps
 
-1. From the repository root, verify the package is intact and unmodified:
+1. From the repository root, run the one-command setup launcher:
    ```bash
-   python run_capstone.py
+   python submission/scripts/run_setup.py
    ```
-   This rebuilds `app/data.js`, verifies all package hashes, validates inject mappings and confirms the submission workspace is writable. Do not proceed if this fails — restore the original archive rather than repairing challenge evidence manually.
+   This runs `python run_capstone.py` (rebuilds `app/data.js`, verifies package
+   hashes, validates inject mappings) and `python tools/check_submission.py --mode scaffold`.
+   Do not proceed if this fails — restore the original archive rather than repairing
+   challenge evidence manually.
 
-2. Confirm the submission scaffold exists and is writable:
+2. (Optional) Install the Taipy UI dependency offline/local:
    ```bash
-   python tools/check_submission.py --mode scaffold
+   pip install taipy
    ```
+   If you want GEN-SUM-3 paraphrasing in the UI, also install `anthropic` and set
+   `CLAUDE_KEY` in `.env`. Without a key the UI uses deterministic template summaries.
 
-3. No additional package installation is required. If participant-authored code under `submission/src` introduces third-party dependencies, they must be vendored or documented here with an offline-installable wheel/path; no network access may be assumed at run time.
+3. Confirm no Node/npm toolchain is required. If leftover `submission/web` or
+   `submission/api` directories appear from a prior experiment, remove them with:
+   ```bash
+   python submission/scripts/reset_submission.py
+   ```
 
 ## Current submission state
 
-As of this pass, `submission/src`, `submission/app`, `submission/tests` and `submission/scripts` contain no substantive implementation files beyond `.gitkeep` placeholders. This setup runbook will be updated with any additional dependency or environment-variable requirements as soon as implementation code is added. There are currently no environment variables, config files or secrets required.
+- Workflows A/B/C are implemented under `submission/src/workflow_{a,b,c}/`.
+- Interactive UI is Taipy (`submission/app_taipy/`), launched via
+  `submission/scripts/run_taipy.py`.
+- One-command scripts: `run_setup.py`, `run_tests.py`, `run_evaluate.py`,
+  `reset_submission.py`, `run_taipy.py`, plus `run_workflow_{a,b,c}.py`.
 
 ## Verification
 
-Setup is complete when both commands in step 1 and step 2 print `PASS` with no errors.
+Setup is complete when `run_setup.py` prints `SETUP PASS` with no errors.

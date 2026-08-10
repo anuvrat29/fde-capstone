@@ -157,6 +157,14 @@ ENV/
 env.bak/
 venv.bak/
 
+# Node / frontend experiment leftovers (submission is Taipy/Python-only)
+node_modules/
+submission/web/
+submission/api/
+npm-debug.log*
+yarn-error.log*
+.pnpm-store/
+
 # Spyder project settings
 .spyderproject
 .spyproject
